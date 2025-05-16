@@ -1,6 +1,6 @@
 #include "giovanni.h"
 #include "myheader.h"
-
+ssize_t my_getline(char **lineptr, size_t *n, FILE *stream);
 uint8_t crea_M6(uint8_t M);
 void prima_operazione(uint8_t M);
 uint8_t rotate_lower4(uint8_t byte, int i);
@@ -11,7 +11,7 @@ int main(int argc, char* argv[]){
     
     size_t len_max;
     printf("Inserisci un messaggio: ");
-    ssize_t len = getline(&messaggio, &C, stdin);
+    ssize_t len =my_getline(&messaggio, &C, stdin);
     len_max = C;
 
     DEBUG_PRINT("Lunghezza Messaggio C: \n Lunghezza Messaggio Len ",C, len);
@@ -25,6 +25,34 @@ int main(int argc, char* argv[]){
     return 0;
 }
 
+
+ssize_t my_getline(char **lineptr, size_t *n, FILE *stream) {
+    if (*lineptr == NULL || *n == 0) {
+        *n = 1;
+        *lineptr = malloc(*n);
+        if (*lineptr == NULL) return -1;
+    }
+
+    int ch = 0;
+    size_t i = 0;
+
+    while ((ch = fgetc(stream)) != EOF && ch != '\n') {
+        printf("%zu\n",*n);
+        if (i+1 >= *n) {
+            *n += 1;
+            char *new_ptr = realloc(*lineptr, *n);
+            if (!new_ptr) return -1;
+            *lineptr = new_ptr;
+        }
+        printf("%zu\n",*n);
+        (*lineptr)[i++] = ch;
+    }
+
+    if (ch == EOF && i == 0) return -1;
+
+    (*lineptr)[i] = '\0';
+    return i;
+}
 
 uint8_t crea_M6(uint8_t M) {
     uint8_t M6 = 0;

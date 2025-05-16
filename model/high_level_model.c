@@ -1,36 +1,33 @@
-#include <stdio.h>
-#include <diego.h>
-#include <stdlib.h>
-#include <giovanni.h>
+#include "giovanni.h"
+#include "myheader.h"
 
-unsigned char crea_M6(unsigned char M);
-void prima_operazione(unsigned char M);
+uint8_t crea_M6(uint8_t M);
+void prima_operazione(uint8_t M);
+uint8_t rotate_lower4(uint8_t byte, int i);
+void print_bin(unsigned char x);
+int main(int argc, char* argv[]){
 
-int main(){
-
-printf("sizeof int %d\n", (int)sizeof(int));
-printf("SBOX %d\n", (int)sizeof(SBOX));
-printf("SBOXDIM %d\n", (int)SBOX_DIM);
-
+   
+    
     size_t len_max;
     printf("Inserisci un messaggio: ");
     ssize_t len = getline(&messaggio, &C, stdin);
     len_max = C;
 
     DEBUG_PRINT("Lunghezza Messaggio C: \n Lunghezza Messaggio Len ",C, len);
-
+    
     for(int M_byte = 0; M_byte<len_max;M_byte++){
         prima_operazione(messaggio[i]);
     }
-
+   
 
     free(messaggio);
     return 0;
 }
 
 
-unsigned char crea_M6(unsigned char M) {
-    unsigned char M6 = 0;
+uint8_t crea_M6(uint8_t M) {
+    uint8_t M6 = 0;
 
     // Bit 7: M[3] ^ M[2]
     M6 |= (( (M >> 3) & 1) ^ ((M >> 2) & 1)) << 5;
@@ -53,12 +50,32 @@ unsigned char crea_M6(unsigned char M) {
     return M6;
 }
 
+uint8_t rotate_lower4(uint8_t byte, int i) {
+    uint8_t lower4 = byte & 0x0F;
+    uint8_t upper4 = byte & 0xF0;
 
-void prima_operazione(unsigned char M){
+    int k = (i / 2) % 4;  // numero di posizioni di rotazione
 
-    for(int r=0; r<12; r++){
-        for(int i=0;i<8; i++){
+    if (k != 0) {
+        lower4 = ((lower4 << k) & 0x0F) | (lower4 >> (4 - k));
+    }
+    DEBUG_PRINT("Prova rotazione:",print_bin(upper4|lower4));
+    return upper4 | lower4;
+}
 
+
+void prima_operazione(uint8_t M){
+
+    for(int r=0; r<12;r++){
+        for(int i=0;i<8;i++){
+            uint8_t a = rotate_lower4((H[(i+1)%8]^funzione_S(crea_M6(M))),i);
+            H[i] = a;      
         }
+    }
+}
+
+void print_bin(unsigned char x) {
+    for (int i = 7; i >= 0; i--) {
+        printf("%d", (x >> i) & 1);
     }
 }

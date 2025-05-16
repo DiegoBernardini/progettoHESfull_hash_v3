@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include <stdint.h>
+#include <stdlib.h>
 
 #ifdef DEBUG
     #define DEBUG_PRINT(fmt, ...) \

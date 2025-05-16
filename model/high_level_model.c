@@ -9,6 +9,7 @@ uint8_t rotate_lower4(uint8_t byte, int i);
 void print_bin(unsigned char x);
 int main(int argc, char* argv[]){
 void seconda_operazione();
+uint8_t restituisci_C_i(int i);
    
     
     size_t len_max;
@@ -110,7 +111,15 @@ void print_bin(unsigned char x) {
     }
 }
 
+uint8_t restituisci_C_i(int i){
+    uint8_t res = (C>>i*8) & 0xFF;
+    return res;
+}
 
 void seconda_operazione(){
+
+    for(int i = 0; i<8;i++){
+        H[i] = rotate_lower4((H[(i+1)%8]^funzione_S(crea_C6(restituisci_C_i(i)))))
+    }
     
 }

@@ -1,17 +1,16 @@
 #include <stdio.h>
-#include <myheader.h>
-int main(){
+#include <diego.h>
+#include <stdlib.h>
+#include <giovanni.h>
 
 unsigned char crea_M6(unsigned char M);
 void prima_operazione(unsigned char M);
 
+int main(){
+
 printf("sizeof int %d\n", (int)sizeof(int));
 printf("SBOX %d\n", (int)sizeof(SBOX));
 printf("SBOXDIM %d\n", (int)SBOX_DIM);
-
-
-
-
 
     size_t len_max;
     printf("Inserisci un messaggio: ");
@@ -57,8 +56,8 @@ unsigned char crea_M6(unsigned char M) {
 
 void prima_operazione(unsigned char M){
 
-    for(int r=0; r<12;r++){
-        for(int i=0;i<8;i++){
+    for(int r=0; r<12; r++){
+        for(int i=0;i<8; i++){
 
         }
     }

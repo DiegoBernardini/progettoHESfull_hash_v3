@@ -1,12 +1,14 @@
 #include "giovanni.h"
 #include "myheader.h"
+
+
 ssize_t my_getline(char **lineptr, size_t *n, FILE *stream);
 uint8_t crea_M6(uint8_t M);
 void prima_operazione(uint8_t M);
 uint8_t rotate_lower4(uint8_t byte, int i);
 void print_bin(unsigned char x);
 int main(int argc, char* argv[]){
-
+void seconda_operazione();
    
     
     size_t len_max;
@@ -106,4 +108,9 @@ void print_bin(unsigned char x) {
     for (int i = 7; i >= 0; i--) {
         printf("%d", (x >> i) & 1);
     }
+}
+
+
+void seconda_operazione(){
+    
 }

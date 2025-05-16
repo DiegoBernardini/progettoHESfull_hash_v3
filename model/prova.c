@@ -13,7 +13,7 @@ void print_bin(unsigned char x) {
 
 ssize_t my_getline(char **lineptr, size_t *n, FILE *stream) {
     if (*lineptr == NULL || *n == 0) {
-        *n = 128;
+        *n = 1;
         *lineptr = malloc(*n);
         if (*lineptr == NULL) return -1;
     }
@@ -22,12 +22,14 @@ ssize_t my_getline(char **lineptr, size_t *n, FILE *stream) {
     size_t i = 0;
 
     while ((ch = fgetc(stream)) != EOF && ch != '\n') {
-        if (i + 1 >= *n) {
-            *n *= 2;
+        printf("%zu\n",*n);
+        if (i+1 >= *n) {
+            *n += 1;
             char *new_ptr = realloc(*lineptr, *n);
             if (!new_ptr) return -1;
             *lineptr = new_ptr;
         }
+        printf("%zu\n",*n);
         (*lineptr)[i++] = ch;
     }
 

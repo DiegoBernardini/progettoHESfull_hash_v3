@@ -3,7 +3,7 @@
 #include <stdint.h>
 
 unsigned char crea_M6(unsigned char M);
-
+uint8_t funzione_S(uint8_t M6); 
 void print_bin(unsigned char x) {
     for (int i = 7; i >= 0; i--) {
         printf("%d", (x >> i) & 1);
@@ -86,6 +86,7 @@ int main() {
 
     rotate_lower4(0b00001100,4 );
 
+    funzione_S(0b00111110);
     
 
     return 0;
@@ -126,4 +127,17 @@ printf("Bit 7:");
     // Bit 1 e 0 restano a 0 (default)
 
     return M6;
+}
+
+uint8_t funzione_S(uint8_t M6){
+    uint8_t riga = 0;
+    uint8_t colonna = 0;    
+    printf("M6: %#X ",M6);
+    riga |= (M6>>5 & 1)<<1;
+    riga != (M6 & 1); 
+    printf("Riga S : %zu \n");
+    colonna |= (M6 & 0x1E)>>1;
+    printf("Colonna S : %zu \n");
+
+    return riga;
 }

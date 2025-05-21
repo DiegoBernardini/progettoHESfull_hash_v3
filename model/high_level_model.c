@@ -19,9 +19,10 @@ int main(int argc, char* argv[]){
     for(int M_byte = 0; M_byte<len_max;M_byte++){
         prima_operazione(messaggio[i]);
     }
-   
 
-    free(messaggio);
+
+
+  free(messaggio);
     return 0;
 }
 
@@ -54,6 +55,31 @@ ssize_t my_getline(char **lineptr, size_t *n, FILE *stream) {
     return i;
 }
 
+//𝐶6[𝑖] = {𝐶[𝑖][7] ⊕ 𝐶[𝑖][1], 𝐶[𝑖][3], 𝐶[𝑖][2], 𝐶[𝑖][5] ⊕ 𝐶[𝑖][0],𝐶[𝑖][4],𝐶[𝑖][6]}
+uint8_t crea_C6(uint8_t C){
+  uint8_t C6 = 0;
+
+  // Bit 5: C[7] ^ C[1]
+  C6 |= (BIT(C, 7) ^ BIT(C, 1)) << 5;
+
+  // Bit: 4 C[3]
+  C6 |= (BIT(C, 3)) << 4;
+
+  // Bit 3: C[2]
+  C6 |= (BIT(C, 2)) << 3;
+
+  // Bit 2: C[5] ^ C[0]
+  C6 |= (BIT(C, 5) ^ BIT(C, 0)) << 2;
+
+  // Bit 1: C[4]
+  C6 |= (BIT(C, 4)) << 1;
+
+  // Bit 0: C[6]
+  C6 |= (BIT(C, 6)) << 0;
+
+  return C6
+}
+
 uint8_t crea_M6(uint8_t M) {
     uint8_t M6 = 0;
 
@@ -78,32 +104,32 @@ uint8_t crea_M6(uint8_t M) {
     return M6;
 }
 
-uint8_t rotate_lower4(uint8_t byte, int i) {
+  uint8_t rotate_lower4(uint8_t byte, int i) {
     uint8_t lower4 = byte & 0x0F;
     uint8_t upper4 = byte & 0xF0;
 
     int k = (i / 2) % 4;  // numero di posizioni di rotazione
 
     if (k != 0) {
-        lower4 = ((lower4 << k) & 0x0F) | (lower4 >> (4 - k));
+      lower4 = ((lower4 << k) & 0x0F) | (lower4 >> (4 - k));
     }
     DEBUG_PRINT("Prova rotazione:",print_bin(upper4|lower4));
     return upper4 | lower4;
-}
+  }
 
 
-void prima_operazione(uint8_t M){
+  void prima_operazione(uint8_t M){
 
     for(int r=0; r<12;r++){
-        for(int i=0;i<8;i++){
-            uint8_t a = rotate_lower4((H[(i+1)%8]^funzione_S(crea_M6(M))),i);
-            H[i] = a;      
-        }
+      for(int i=0;i<8;i++){
+        uint8_t a = rotate_lower4((H[(i+1)%8]^funzione_S(crea_M6(M))),i);
+        H[i] = a;
+      }
     }
-}
+  }
 
-void print_bin(unsigned char x) {
+  void print_bin(unsigned char x) {
     for (int i = 7; i >= 0; i--) {
-        printf("%d", (x >> i) & 1);
+      printf("%d", (x >> i) & 1);
     }
-}
+  }

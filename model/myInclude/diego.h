@@ -22,3 +22,4 @@ const unsigned int SBOX2 [][16]  = {
 
 #define SBOX_DIM (sizeof(SBOX) / sizeof(SBOX[0][0]))
 
+#define BIT(vector, pos) ((vector >> pos) & 1)

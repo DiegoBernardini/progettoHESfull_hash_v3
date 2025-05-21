@@ -37,7 +37,7 @@ int main(int argc, char* argv[]){
         }
     }
 
-    // seconda_operazione();
+    seconda_operazione();
     compatta_H();
 
     printf("Digest Intero:  %u, Digest Hex : %#X",Hf,Hf);
@@ -139,7 +139,7 @@ uint8_t crea_C6(uint8_t C){
   // Bit 0: C[6]
   C6 |= (BIT(C, 6)) << 0;
 
-  return C6
+  return C6;
 }
 
 uint8_t rotate_lower4(uint8_t byte, int i) {
@@ -183,7 +183,7 @@ uint8_t restituisci_C_i(int i){
 void seconda_operazione(){
 
     for(int i = 0; i<8;i++){
-       // H[i] = rotate_lower4((H[(i+1)%8]^funzione_S(crea_C6(restituisci_C_i(i)))),i)
+       H[i] = rotate_lower4((H[(i+1)%8]^funzione_S(crea_C6(restituisci_C_i(i)))),i);
     }
 
 }

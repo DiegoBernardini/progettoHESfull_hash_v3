@@ -94,22 +94,22 @@ uint8_t funzione_S(uint8_t M6){
 uint8_t crea_M6(uint8_t M) {
     uint8_t M6 = 0;
 
-    // Bit 7: M[3] ^ M[2]
+    // Bit 5: M[3] ^ M[2]
     M6 |= (( (M >> 3) & 1) ^ ((M >> 2) & 1)) << 5;
 
-    // Bit 6: M[1]
+    // Bit 4: M[1]
     M6 |= ((M >> 1) & 1) << 4;
 
-    // Bit 5: M[0]
+    // Bit 3: M[0]
     M6 |= (M & 1) << 3;
 
-    // Bit 4: M[7]
+    // Bit 2: M[7]
     M6 |= ((M >> 7) & 1) << 2;
 
-    // Bit 3: M[6]
+    // Bit 1: M[6]
     M6 |= ((M >> 6) & 1) << 1;
 
-    // Bit 2: M[5] ^ M[4]
+    // Bit 0: M[5] ^ M[4]
     M6 |= (((M >> 5) & 1) ^ ((M >> 4) & 1));
 
     DEBUG_PRINT("M: %#X\t M6: %#X\n ",M,M6);

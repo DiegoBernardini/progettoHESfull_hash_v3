@@ -1,21 +1,20 @@
 module control_part(
-    input clk
-    ,input rst_n
-    ,input F_dr
-    ,input End_Of_File
-    ,input start
-    ,input case_rc0
-    ,output F_rtr
-    ,output switch_operation
-    ,output H_ready
-    ,output validate_input
-    ,output validate_R_H
-    ,output [2:0] I
+    input  wireclk
+    ,input wire rst_n
+    ,input wire F_dr
+    ,input wire End_Of_File
+    ,input wire start
+    ,input wire case_rc0
+    ,output wire F_rtr
+    ,output wire switch_operation
+    ,output wire H_ready
+    ,output wire validate_input
+    ,output wire validate_R_H
+    ,output reg [2:0] R_i
 );
     
     reg [3:0] R_r;
-    reg [2:0] R_i;
-    wire disable_R_R,incrementation_round,next_iteration,case_empty_input,ric_12;
+    wire disable_R_R,incrementation_round,next_iteration,case_empty_input,ric_12,real_start;
     assign F_rtr = (start & case_rc0)|ric_12;
     assign case_empty_input = case_rc0 & End_Of_File;
     assign switch_operation = disable_R_R | case_empty_input;
@@ -25,10 +24,11 @@ module control_part(
     assign validate_R_H = validate_input|switch_operation; 
     assign next_iteration = &R_i;
     assign ric_12 = R_r < 12?0:1;
-
-    always_ff @( posedge clk or negedge rst_n ) 
+    assign H_ready = End_Of_File & next_iteration;
+    assign real_start = case_rc0 & start
+    always_ff @(posedge clk or negedge rst_n or posedge real_start) 
    
-        if(!rst_n)
+        if(!rst_n || real_start)
         begin
             R_i <= 3'b000;
             R_r <= 4'b0000;  

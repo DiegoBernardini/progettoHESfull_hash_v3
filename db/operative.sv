@@ -118,7 +118,7 @@ endmodule
     //     out_val = SBOX[row][col]; // accesso diretto come in C
     // end
 
-endmodule
+
 
 module Operative_module (
     input   wire [7:0] B

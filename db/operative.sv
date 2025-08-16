@@ -106,19 +106,18 @@ module sbox (
         endcase
 endmodule
 
-    // Dichiarazione: 4 righe, 16 colonne, ciascun elemento largo 4 bit
-    // localparam logic [3:0] SBOX [3:0][15:0] = '{
-    //     '{4'h2, 4'hC, 4'h4, 4'h1, 4'h7, 4'hA, 4'hB, 4'h6, 4'h8, 4'h5, 4'h3, 4'hF, 4'hD, 4'h0, 4'hE, 4'h9},
-    //     '{4'hE, 4'hB, 4'h2, 4'hC, 4'h4, 4'h7, 4'hD, 4'h1, 4'h5, 4'h0, 4'hF, 4'hC, 4'h3, 4'h9, 4'h8, 4'h6},
-    //     '{4'h4, 4'h2, 4'h1, 4'hB, 4'hC, 4'hD, 4'h7, 4'h8, 4'hF, 4'h9, 4'hC, 4'h5, 4'h6, 4'h3, 4'h0, 4'hE},
-    //     '{4'hB, 4'h8, 4'hC, 4'h7, 4'h1, 4'hE, 4'h2, 4'hD, 4'h6, 4'hF, 4'h0, 4'h9, 4'hC, 4'h4, 4'h5, 4'h3}
-    // };
 
-    // always_comb begin
-    //     out_val = SBOX[row][col]; // accesso diretto come in C
-    // end
+module xor_shift (
+    input wire [31:0] H
+    ,input wire [3:0] S
+    ,input wire [2:0] I
+    ,output wire [31:0] H_modified
+);
+
+assign H_modified[(I*4)+3 : (I*4)] = ((H[(I*4)+3 : (I*4)] ^ S) << I) | ((H[(I*4)+3 : (I*4)] ^ S) >> (4 - I));
 
 
+endmodule
 
 module Operative_module (
     input   wire [7:0] B
@@ -141,23 +140,41 @@ module Operative_module (
     wire [63:0] c6_in;
     wire real_start; // case_R_c_zero AND start
 
+    wire [5:0] sbox_in;
+    wire [3:0] sbox_out;
+
+    wire [31:0] xor_shift_in;
+    wire [31:0] xor_shift_out;
+
 assign case_R_c_zero = ~(&R_c);
 assign real_start = case_R_c_zero & start;
 assign m6_in = R_b;
 assign c6_in = R_c;
 
+assign sbox_in = switch_operation == 1? c6_out : m6_out; 
+
+assign xor_shift_in = R_h;
+
 M6 modulo_m6(
     .a(m6_in),
     .b(m6_out));
-
 
 C6 modulo_c6(
     .C6_in(c6_in),
     .i(R_i),
     .C6_out(c6_out));
 
-//fare modulo sbox dopo aver cambiato la logica
+sbox modulo_sbox(
+    .in(sbox_in),
+    .out(sbox_out)
+);
 
+xor_shift modulo_xor_shift(
+    .H(xor_shift_in),
+    .S(sbox_out),
+    .I(R_i),
+    .H_modified(xor_shift_out)
+);
 
 always_ff @(posedge real_start or posedge clock or negedge rstn) begin
     if (!rstn or real_start) begin//casi reset     
@@ -171,28 +188,11 @@ always_ff @(posedge real_start or posedge clock or negedge rstn) begin
             R_c <= R_c + 1;
             R_b <= B;
         end 
-        // else begin
-        //     R_c <= R_c;
-        //     R_b <= R_b;
-        // end
+
         if(validate_R_h == 1) begin
-            R_h <= ;//filo che esce dal modulo xor
+            R_h <= xor_shift_out;
         end
-        // else begin 
-        //     R_h = R_h;
-        // end
     end
 end
-
-endmodule
-
-module xor_shift (
-    input wire [31:0] H
-    ,input wire [3:0] S
-    ,input wire [2:0] I
-    ,output wire [31:0] H_modified
-);
-
-assign H_modified[(I*4)+3 : (I*4)] = ((H[(I*4)+3 : (I*4)] ^ S) << I) | ((H[(I*4)+3 : (I*4)] ^ S) >> (4 - I));
 
 endmodule

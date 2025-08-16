@@ -1,5 +1,5 @@
 module control_part(
-    input  wireclk
+    input  wire clk
     ,input wire rst_n
     ,input wire F_dr
     ,input wire End_Of_File

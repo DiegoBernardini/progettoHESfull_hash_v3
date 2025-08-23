@@ -28,7 +28,7 @@ module full_hash (
         ,.R_i(i)
     );
 
-    opertive oper(
+    opertive_part operative(
      .B(Byte)
     ,.start(start) //flag di start  
     ,.clock(clk)

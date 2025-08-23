@@ -1,0 +1,114 @@
+// File: testbench.sv
+`timescale 1ns/1ps
+
+module testbench;
+
+  // --- Parametri di Simulazione ---
+  localparam CLK_PERIOD = 10; // Periodo del clock: 10 ns (Frequenza: 100 MHz)
+
+  // 1. --- Segnali della Testbench ---
+  // Segnali per pilotare gli input del DUT
+  logic           clk;
+  logic           rst_n;
+  logic           start;
+  logic   [7:0]   Byte;
+  logic           End_Of_File;
+  logic           F_dr;
+
+  // Segnali per leggere gli output del DUT
+  logic   [31:0]  R_h;
+  wire            F_rtr;
+  wire            H_ready;
+
+  // 2. --- Istanza del DUT (Design Under Test) ---
+  // Collega i segnali della testbench alle porte del modulo da testare
+  full_hash dut (
+      .clk          (clk),
+      .rst_n        (rst_n),
+      .start        (start),
+      .Byte         (Byte),
+      .End_Of_File  (End_Of_File),
+      .F_dr         (F_dr),
+      .R_h          (R_h),
+      .F_rtr        (F_rtr),
+      .H_ready      (H_ready)
+  );
+
+  // 3. --- Generatore di Clock ---
+  // Questo blocco 'always' crea un'onda quadra continua per il clock
+  always #((CLK_PERIOD)/2) clk = ~clk;
+
+  // Task per l'invio di un byte (rende il codice più pulito)
+  // Questo task attende che il DUT sia pronto (F_rtr=1), poi invia il dato.
+  task send_byte(input [7:0] data, input bit is_last_byte);
+    wait (F_rtr == 1);
+    @(posedge clk);
+    F_dr        = 1'b1;
+    Byte        = data;
+    End_Of_File = is_last_byte;
+    $display("Tempo: %0t ns -> Inviando byte 0x%h (End_Of_File=%b)", $time, data, is_last_byte);
+    @(posedge clk);
+    F_dr        = 1'b0;
+    End_Of_File = 1'b0;
+  endtask
+
+  // 4. --- Blocco Principale degli Stimoli ---
+  initial begin
+    // --- Inizializzazione ---
+    $display("Avvio della simulazione...");
+    clk   = 1'b0;
+    rst_n = 1'b0; // Applica il reset (attivo basso)
+    start = 1'b0;
+    F_dr  = 1'b0;
+    Byte  = 8'h00;
+    End_Of_File = 1'b0;
+
+    // Mantieni il reset per alcuni cicli
+    #(CLK_PERIOD * 5);
+    rst_n = 1'b1; // Rilascia il reset
+    $display("Tempo: %0t ns -> Reset rilasciato.", $time);
+    @(posedge clk);
+
+    // --- Inizio del Test ---
+    $display("Tempo: %0t ns -> Invio del segnale di start.", $time);
+    start = 1'b1;
+    @(posedge clk);
+    start = 1'b0;
+
+    // --- Invio del flusso di dati ---
+    // Definiamo un array di byte da usare come input
+    logic [7:0] data_to_send[] = {8'hDE, 8'hAD, 8'hBE, 8'hEF};
+
+    // Inviamo ogni byte usando il nostro task
+    foreach(data_to_send[i]) begin
+      // L'ultimo byte viene marcato con is_last_byte = 1
+      send_byte(data_to_send[i], (i == data_to_send.size() - 1));
+    end
+
+    $display("Tempo: %0t ns -> Tutti i byte sono stati inviati. Attendo il risultato...", $time);
+
+    // --- Attesa e Verifica del Risultato ---
+    // Attendi che H_ready diventi alto, ma con un timeout per sicurezza
+    fork
+      begin
+        wait (H_ready == 1);
+      end
+      begin
+        #(CLK_PERIOD * 1000); // Timeout di 1000 cicli
+        $error("TIMEOUT! H_ready non è mai diventato alto. Il test è fallito.");
+        $finish;
+      end
+    join_any
+
+    @(posedge clk);
+    $display("-------------------------------------------------");
+    $display("SUCCESS! Hashing completato al tempo %0t ns.", $time);
+    $display("Valore Hash finale (R_h) = 0x%h", R_h);
+    $display("-------------------------------------------------");
+
+    // --- Fine della Simulazione ---
+    #(CLK_PERIOD * 10);
+    $finish;
+  end
+
+endmodule

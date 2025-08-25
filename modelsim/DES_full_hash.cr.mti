@@ -1,4 +1,11 @@
-D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/xor_shift.sv {1 {vlog -work work -sv -stats=none D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/xor_shift.sv
+D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv {1 {vlog -work work -sv -stats=none D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module full_hash
+
+Top level modules:
+	full_hash
+
+} {} {}} D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/xor_shift.sv {1 {vlog -work work -sv -stats=none D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/xor_shift.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module xor_shift
 

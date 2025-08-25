@@ -259,3 +259,5 @@ run -all
 # Tempo: 55000 ns -> Invio del segnale di start.
 # Tempo: 2125000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
 run -all
+# End time: 21:25:03 on Aug 25,2025, Elapsed time: 0:05:04
+# Errors: 0, Warnings: 1

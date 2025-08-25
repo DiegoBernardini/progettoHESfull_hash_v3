@@ -12,7 +12,7 @@ module testbench;
   reg           rst_n;
   reg           start;
   reg   [7:0]   Byte;
-  reg           End_Of_File;
+  reg           End_of_File;
   reg           F_dr;
   
   // Uso 'wire' per leggere le uscite dal DUT
@@ -39,7 +39,7 @@ module testbench;
       .rst_n        (rst_n),
       .start        (start),
       .Byte         (Byte),
-      .End_Of_File  (End_Of_File),
+      .End_of_File  (End_of_File),
       .F_dr         (F_dr),
       .R_h          (R_h),
       .F_rtr        (F_rtr),
@@ -60,7 +60,7 @@ module testbench;
     start = 1'b0;
     F_dr  = 1'b0;
     Byte  = 8'h00;
-    End_Of_File = 1'b0;
+    End_of_File = 1'b0;
 
     // Mantieni il reset per alcuni cicli
     #(CLK_PERIOD * 5);
@@ -85,7 +85,7 @@ module testbench;
       
 
       @(posedge clk);
-      F_dr = 1'b0
+      F_dr = 1'b0;
       // Se è l'ultimo byte, alza il flag End_Of_File
      /* if (i == test.len()) begin
         End_Of_File = 1'b1;
@@ -99,7 +99,7 @@ module testbench;
       End_Of_File = 1'b0;*/
     end
     
-    End_of_File = 1'b1
+    End_of_File = 1'b1;
 
     $display("Tempo: %0t ns -> Tutti i byte sono stati inviati. Attendo il risultato...", $time);
     
@@ -110,7 +110,7 @@ module testbench;
 
     // --- Fine della Simulazione ---
     #(CLK_PERIOD * 10);
-    $finish;
+    $stop;
   end
 
 endmodule

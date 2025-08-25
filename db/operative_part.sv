@@ -55,14 +55,20 @@ xor_shift modulo_xor_shift(
     .H_modified(xor_shift_out)
 );
 
-always_ff @(posedge real_start or posedge clock or negedge rstn) begin
-    if (!rstn or real_start) begin//casi reset     
+always_ff @(posedge clock or negedge rstn) begin
+    if (!rstn) begin//casi reset     
+        R_c <= '0;
+        R_h <= 8'h3FA1EF23;
+        R_b <= 8'b0;
+    end
+    else if(real_start==1'b1)
+    begin
         R_c <= '0;
         R_h <= 4'h3FA1EF23;
         R_b <= 8'b0;
     end
-
-    else begin
+    else 
+    begin
         if(validate_input == 1) begin
             R_c <= R_c + 1;
             R_b <= B;

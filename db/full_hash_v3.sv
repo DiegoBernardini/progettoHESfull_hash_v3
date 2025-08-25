@@ -3,21 +3,21 @@ module full_hash (
     ,input wire rst_n
     ,input wire start
     ,input wire [7:0] Byte
-    ,input wire End_Of_File
+    ,input wire End_of_File
     ,input wire F_dr
     ,output reg [31:0] R_h
     ,output wire F_rtr
     ,output wire H_ready
 );
 
-    wire case_rc0,sw_o,F_rtr,H_rd,vi,v_R_H;
+    wire case_rc0,sw_o,H_rd,vi,v_R_H;
     wire [2:0] i;
     wire [31:0] digest;
     control_part control(
         .clk(clk)
         ,.rst_n(rst_n)
         ,.F_dr(F_dr)
-        ,.End_Of_File(End_Of_File)
+        ,.End_of_File(End_of_File)
         ,.start(start)
         ,.case_rc0(case_rc0)
         ,.F_rtr(F_rtr)
@@ -28,7 +28,7 @@ module full_hash (
         ,.R_i(i)
     );
 
-    opertive_part operative(
+    operative_part operative(
      .B(Byte)
     ,.start(start) //flag di start  
     ,.clock(clk)

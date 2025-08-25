@@ -1,0 +1,261 @@
+# Compile of c6.sv was successful.
+# Compile of control_part.sv failed with 2 errors.
+# Compile of full_hash_v3.sv failed with 1 errors.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv failed with 3 errors.
+# Compile of sbox.sv failed with 64 errors.
+# Compile of xor_shift.sv failed with 3 errors.
+# Compile of testbench.sv failed with 2 errors.
+# 8 compiles, 6 failed with 75 errors.
+# Compile of c6.sv was successful.
+# Compile of control_part.sv failed with 2 errors.
+# Compile of full_hash_v3.sv failed with 1 errors.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv failed with 3 errors.
+# Compile of sbox.sv failed with 64 errors.
+# Compile of xor_shift.sv failed with 3 errors.
+# Compile of testbench.sv failed with 2 errors.
+# 8 compiles, 6 failed with 75 errors.
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv failed with 1 errors.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv failed with 3 errors.
+# Compile of sbox.sv failed with 64 errors.
+# Compile of xor_shift.sv failed with 3 errors.
+# Compile of testbench.sv failed with 2 errors.
+# 8 compiles, 5 failed with 73 errors.
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv failed with 1 errors.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv failed with 3 errors.
+# Compile of sbox.sv failed with 64 errors.
+# Compile of xor_shift.sv failed with 3 errors.
+# Compile of testbench.sv failed with 2 errors.
+# 8 compiles, 5 failed with 73 errors.
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv failed with 1 errors.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful with warnings.
+# Compile of sbox.sv failed with 64 errors.
+# Compile of xor_shift.sv failed with 3 errors.
+# Compile of testbench.sv failed with 2 errors.
+# 8 compiles, 4 failed with 70 errors.
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful with warnings.
+# Compile of sbox.sv failed with 64 errors.
+# Compile of xor_shift.sv failed with 1 errors.
+# Compile of testbench.sv failed with 2 errors.
+# 8 compiles, 3 failed with 67 errors.
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful with warnings.
+# Compile of sbox.sv failed with 64 errors.
+# Compile of xor_shift.sv failed with 2 errors.
+# Compile of testbench.sv failed with 2 errors.
+# 8 compiles, 3 failed with 68 errors.
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful with warnings.
+# Compile of sbox.sv failed with 64 errors.
+# Compile of xor_shift.sv failed with 2 errors.
+# Compile of testbench.sv failed with 2 errors.
+# 8 compiles, 3 failed with 68 errors.
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful with warnings.
+# Compile of sbox.sv failed with 64 errors.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv failed with 2 errors.
+# 8 compiles, 2 failed with 66 errors.
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful with warnings.
+# Compile of sbox.sv failed with 1 errors.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv failed with 2 errors.
+# 8 compiles, 2 failed with 3 errors.
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful with warnings.
+# Compile of sbox.sv was successful.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv failed with 2 errors.
+# 8 compiles, 1 failed with 2 errors.
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful with warnings.
+# Compile of sbox.sv was successful.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv failed with 2 errors.
+# 8 compiles, 1 failed with 2 errors.
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful with warnings.
+# Compile of sbox.sv was successful.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv failed with 1 errors.
+# 8 compiles, 1 failed with 1 error.
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful with warnings.
+# Compile of sbox.sv was successful.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -gui work.testbench
+# vsim -gui work.testbench 
+# Start time: 21:12:30 on Aug 25,2025
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.full_hash
+# Loading work.control_part
+# ** Error: (vsim-3033) Instantiation of 'opertive_part' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 31
+#         Searched libraries:
+#             D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/modelsim/work
+# Error loading design
+# End time: 21:12:30 on Aug 25,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 19
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful with warnings.
+# Compile of sbox.sv was successful.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -gui work.testbench
+# vsim -gui work.testbench 
+# Start time: 21:13:42 on Aug 25,2025
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.full_hash
+# Loading work.control_part
+# Loading work.operative_part
+# Loading work.M6
+# Loading work.C6
+# Loading work.sbox
+# Loading work.xor_shift
+# ** Error: (vsim-3063) Port 'End_of_File' not found in the connected module (5th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv Line: 37
+# Error loading design
+# End time: 21:13:43 on Aug 25,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 2
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful with warnings.
+# Compile of sbox.sv was successful.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -gui work.testbench
+# vsim -gui work.testbench 
+# Start time: 21:15:50 on Aug 25,2025
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.full_hash
+# Loading work.control_part
+# Loading work.operative_part
+# Loading work.M6
+# Loading work.C6
+# Loading work.sbox
+# Loading work.xor_shift
+# ** Error: (vsim-3063) Port 'End_Of_File' not found in the connected module (4th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut/control File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 16
+# Error loading design
+# End time: 21:15:51 on Aug 25,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 2
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful with warnings.
+# Compile of sbox.sv was successful.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -gui work.full_hash
+# vsim -gui work.full_hash 
+# Start time: 21:16:26 on Aug 25,2025
+# Loading sv_std.std
+# Loading work.full_hash
+# Loading work.control_part
+# Loading work.operative_part
+# Loading work.M6
+# Loading work.C6
+# Loading work.sbox
+# Loading work.xor_shift
+vsim -gui work.testbench
+# End time: 21:16:37 on Aug 25,2025, Elapsed time: 0:00:11
+# Errors: 0, Warnings: 2
+# vsim -gui work.testbench 
+# Start time: 21:16:37 on Aug 25,2025
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.full_hash
+# Loading work.control_part
+# Loading work.operative_part
+# Loading work.M6
+# Loading work.C6
+# Loading work.sbox
+# Loading work.xor_shift
+run -all
+# Avvio della simulazione (stile Verilog classico)...
+# Tempo: 50000 ns -> Reset rilasciato.
+# Tempo: 55000 ns -> Invio del segnale di start.
+# Tempo: 2125000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful with warnings.
+# Compile of sbox.sv was successful.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -gui work.testbench
+# End time: 21:19:59 on Aug 25,2025, Elapsed time: 0:03:22
+# Errors: 0, Warnings: 2
+# vsim -gui work.testbench 
+# Start time: 21:19:59 on Aug 25,2025
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.full_hash
+# Loading work.control_part
+# Loading work.operative_part
+# Loading work.M6
+# Loading work.C6
+# Loading work.sbox
+# Loading work.xor_shift
+add wave sim:/testbench/*
+run -all
+# Avvio della simulazione (stile Verilog classico)...
+# Tempo: 50000 ns -> Reset rilasciato.
+# Tempo: 55000 ns -> Invio del segnale di start.
+# Tempo: 2125000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+run -all

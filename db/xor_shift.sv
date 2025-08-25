@@ -5,7 +5,12 @@ module xor_shift (
     ,output wire [31:0] H_modified
 );
 
-assign H_modified[(I*4)+3 : (I*4)] = ((H[(I*4)+3 : (I*4)] ^ S) << I) | ((H[(I*4)+3 : (I*4)] ^ S) >> (4 - I));
-
+reg [31:0] H_m;
+assign H_modified = H_m;
+always_comb
+begin
+    H_m = H;
+    H_m[(I*4)+: 4] = ((H[(I*4)+:4] ^ S) << I) | ((H[(I*4)+:4] ^ S) >> (4 - I));
+end
 
 endmodule

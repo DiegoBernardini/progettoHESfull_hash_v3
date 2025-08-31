@@ -1,0 +1,197 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "R_h[31]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[30]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[29]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[28]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[27]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[26]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[25]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[24]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[23]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[22]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[21]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[20]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[19]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[18]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[17]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[16]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[15]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[14]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[13]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[12]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[11]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[10]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[9]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[8]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[7]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[6]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[5]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[4]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[3]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[2]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[1]",
+					"strict" : false
+				},
+				{
+					"name" : "R_h[0]",
+					"strict" : false
+				},
+				{
+					"name" : "F_rtr",
+					"strict" : false
+				},
+				{
+					"name" : "H_ready",
+					"strict" : false
+				},
+				{
+					"name" : "start",
+					"strict" : false
+				},
+				{
+					"name" : "End_of_File",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst_n",
+					"strict" : false
+				},
+				{
+					"name" : "F_dr",
+					"strict" : false
+				},
+				{
+					"name" : "Byte[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Byte[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Byte[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Byte[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Byte[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Byte[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Byte[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Byte[2]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

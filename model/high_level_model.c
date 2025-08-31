@@ -143,6 +143,7 @@ uint8_t crea_C6(uint8_t C){
 }
 
 uint8_t rotate_lower4(uint8_t byte, int i) {
+    DEBUG_PRINT("Byte originale: %#X",byte);
     uint8_t lower4 = byte & 0x0F;
     uint8_t upper4 = byte & 0xF0;
 
@@ -161,10 +162,12 @@ void prima_operazione(uint8_t M){
     for(int r=0; r<12;r++){
         DEBUG_PRINT("Passo %d della prima operazione",r);
         for(int i=0;i<8;i++){
+            DEBUG_PRINT("Interazione %d della del passo %d operazione",i,r);
             DEBUG_PRINT("Valore %d di H prima della rotate: %#X\n",i,H[i]);
+            DEBUG_PRINT("Valore %d di H+1 prima della rotate: %#X\n",i,H[(i+1)%8]);
             uint8_t a = rotate_lower4((H[(i+1)%8]^funzione_S(crea_M6(M))),i);
             H[i] = a;
-             DEBUG_PRINT("Valore %d di H dopo della rotate: %#X\n",i,H[i]);
+            DEBUG_PRINT("Valore %d di H dopo della rotate: %#X\n",i,H[i]);
         }
     }
 }

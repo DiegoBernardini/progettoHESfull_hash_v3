@@ -1,0 +1,15 @@
+Wed Aug 27 14:51:59 CEST 2025
+Trace back: can't read "ProjectFiles(D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv)": no such variable
+    while executing
+".vcop Eval Project::compileAllFiles"
+    invoked from within
+".dockbar.tbf1.compile.tb.button_16 invoke"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel #0 [list $w invoke]"
+    (procedure "tk::ButtonUp" line 24)
+    invoked from within
+"tk::ButtonUp .dockbar.tbf1.compile.tb.button_16"
+    (command bound to event)
+  <2:C:/intelFPGA/20.1/modelsim_ase/win32aloem/tk8.6/bgerror.tcl:106: ::tkerror {can't read "ProjectFiles(D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv)": no such variable}
+  <1:C:/mtitcl/vsim/sa_commands.tc_:349: ::tk::dialog::error::bgerror {can't read "ProjectFiles(D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv)": no such variable}

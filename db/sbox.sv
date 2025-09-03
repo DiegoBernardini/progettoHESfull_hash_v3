@@ -1,10 +1,12 @@
+//S-box transformation of DES algorithm
+
 module sbox (
     input   wire [5:0] in
     ,output wire [3:0] out
 );
         reg [3:0] sup_out;
         assign out = sup_out;
-        always_comb// Valuta la combinazione con uno switch-case
+        always_comb
           case (in)
             6'b000000: sup_out = 4'b0010;
             6'b000001: sup_out = 4'b1110;

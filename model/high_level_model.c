@@ -7,7 +7,7 @@ uint8_t crea_M6(uint8_t M);
 uint8_t funzione_S(uint8_t M6);
 void prima_operazione(uint8_t M);
 uint8_t rotate_lower4(uint8_t byte, int i);
-void print_bin(unsigned char x);
+//void print_bin(unsigned char x);
 void seconda_operazione();
 uint8_t restituisci_C_i(int i);
 void compatta_H();
@@ -15,15 +15,8 @@ void compatta_H();
 
 
 /*MAIN */
-
-
-
-
 int main(int argc, char* argv[]){
 
-
-
-    
     size_t len_max;
     printf("Inserisci un messaggio: ");
     my_getline(&messaggio, &C, stdin);
@@ -77,7 +70,7 @@ ssize_t my_getline(char **lineptr, size_t *n, FILE *stream) {
     return i;
 }
 
-
+//S-box transformation of DES algorithm that works over a byte
 uint8_t funzione_S(uint8_t M6){
     uint8_t riga = 0;
     uint8_t colonna = 0;
@@ -91,6 +84,7 @@ uint8_t funzione_S(uint8_t M6){
     return SBOX[riga][colonna];
 }
 
+// 𝑀6 = {𝑀[3] ⊕ 𝑀[2], 𝑀[1], 𝑀[0], 𝑀[7], 𝑀[6], 𝑀[5] ⊕ 𝑀[4]}
 uint8_t crea_M6(uint8_t M) {
     uint8_t M6 = 0;
 
@@ -142,6 +136,7 @@ uint8_t crea_C6(uint8_t C){
   return C6;
 }
 
+//left circular shift by k bits
 uint8_t rotate_lower4(uint8_t byte, int i) {
     uint8_t lower4 = byte & 0x0F;
     uint8_t upper4 = byte & 0xF0;
@@ -168,13 +163,15 @@ void prima_operazione(uint8_t M){
         }
     }
 }
-
+/*
 void print_bin(unsigned char x) {
     for (int i = 7; i >= 0; i--) {
         printf("%d", (x >> i) & 1);
     }
 }
+*/
 
+//restituisce il byte i-esimo di C
 uint8_t restituisci_C_i(int i){
     uint8_t res = (C>>i*8) & 0xFF;
     return res;

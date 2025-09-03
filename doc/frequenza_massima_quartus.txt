@@ -1,0 +1,9 @@
+Frequenza massima senza Virtual Pin attivati: 92.01 MHz circa 10.9 ns
+
+S 85C : 92.14 MHz
+S 0C : 92.01 Mhz
+
+Frequenza massima con Virtual Pin attivati: 107.27 Mhz circa 9.3 ns
+
+S 85: 107.92 MHz
+S 0C: 107.27 Mhz

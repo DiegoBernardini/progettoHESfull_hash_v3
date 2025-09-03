@@ -1,3 +1,5 @@
+// modulo che contiene il modulo operativo e il modulo di cotrollo
+
 module full_hash (
     input wire clk
     ,input wire rst_n
@@ -12,10 +14,10 @@ module full_hash (
 
    
 
-    wire case_rc0,sw_o,vi,v_R_H;
+    wire case_rc0,sw_o,vi,v_R_H; // fili di connessione
     wire [2:0] i;
     wire [31:0] digest;
-    wire [0:31] real_digest;
+    wire [0:31] real_digest; // output finale
     assign R_h = real_digest;
     control_part control(
         .clk(clk)
@@ -41,11 +43,11 @@ module full_hash (
     ,.switch_operation(sw_o) //e
     ,.validate_R_h(v_R_H) //f
     ,.R_i(i)
-    ,.R_h(digest) //digest
+    ,.R_h(digest)
     ,.case_R_c_zero(case_rc0)//h
     );
 
-    inverter invertitore(  // report : a 
+    inverter invertitore(  
     .H_in(digest)
     ,.H_out(real_digest)
     );

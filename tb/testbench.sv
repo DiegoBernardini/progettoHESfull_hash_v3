@@ -23,16 +23,15 @@ module testbench;
 
   // registri di lavoro
   reg [31:0] test_output;
-  // reg [7:0] input;
-  
+   
   // Variabile intera per i cicli
   integer i;
   integer reset_done = 0;
 
   // Memoria per contenere i dati di test
   string test = "CiaoMondo";
-  integer test_reset = $urandom_range(0,test.len());
-  integer test_start = $urandom_range(0,test.len());
+  integer test_reset = $urandom_range(0,test.len()); // posizione in cui avviene il reset
+  integer test_start = $urandom_range(0,test.len()); // posizione in cui si tenta di ripremere il tast start
 
   // 2. --- Istanza del DUT (Design Under Test) ---
   // Collega i segnali della testbench alle porte del modulo da testare
@@ -140,7 +139,7 @@ module testbench;
           #(CLK_PERIOD * 5);
           rst_n = 1'b1; // Rilascia il reset
           $display("Tempo: %0t ns -> Reset rilasciato.", $time);
-          // non deve aspettare il clock
+        
         end
       
      
@@ -196,7 +195,7 @@ module testbench;
 
       if(i == test_start)
         begin
-          start = 1'b1;
+          start = 1'b1; // tenta di inviare un altro start
           @(posedge clk);
           start = 1'b0;
         end

@@ -6,13 +6,13 @@ module xor_shift (
 );
 
 reg [31:0] H_m;
-reg [1:0] I_modulato;
+
 
 assign H_modified = H_m;
 always_comb
 begin
     H_m = H; 
-    H_m[(I*4)+: 4] = ((H[(((I+1)%8)*4)+:4] ^ S) << (I/2)%4) | ((H[(((I+1)%8)*4)+:4] ^ S) >> (4 - (I/2)%4));
+    H_m[(I*4)+: 4] = ((H[(((I+1)%8)*4)+:4] ^ S) << (I/2)) | ((H[(((I+1)%8)*4)+:4] ^ S) >> (4 - (I/2)));
 end
 
 endmodule

@@ -12,24 +12,23 @@ module operative_part (
 );
     
     reg [7:0]  R_b;
-    reg [63:0] R_c;
+    reg [63:0] R_c = 64'd0;
     wire [5:0] m6_out;
     wire [7:0] m6_in;
     wire [5:0] c6_out;
     wire [63:0] c6_in;
-    wire real_start; // case_R_c_zero AND start
-
+   
     wire [5:0] sbox_in;
     wire [3:0] sbox_out;
 
     wire [31:0] xor_shift_in;
     wire [31:0] xor_shift_out;
+    wire real_start;
 
-assign case_R_c_zero = ~(&R_c);
-assign real_start = case_R_c_zero & start;
+assign case_R_c_zero = (R_c == 64'd0)?1:0;
 assign m6_in = R_b;
 assign c6_in = R_c;
-
+assign real_start = case_R_c_zero & start;
 assign sbox_in = switch_operation == 1? c6_out : m6_out; 
 
 assign xor_shift_in = R_h;
@@ -55,17 +54,19 @@ xor_shift modulo_xor_shift(
     .H_modified(xor_shift_out)
 );
 
+
+
 always_ff @(posedge clock or negedge rstn) begin
     if (!rstn) begin//casi reset     
-        R_c <= '0;
-        R_h <= 8'h3FA1EF23;
-        R_b <= 8'b0;
+        R_c <= 64'd0;
+        R_h <= 32'h32FE1AF3; 
+        R_b <= 8'd0;
     end
-    else if(real_start==1'b1)
+    else if(real_start==1'b1) // problema se C non è inizializzato allo real_start non esiste e quindi non porta mai partire.
     begin
-        R_c <= '0;
-        R_h <= 4'h3FA1EF23;
-        R_b <= 8'b0;
+        R_c <= 64'd0;
+        R_h <= 32'h32FE1AF3; // dobbiamo scriverlo al contrario perché abbiamo scelto la notazione [MSB:LSB], nel modello in c++ ovviamente la notazione del vettore è [LSB:MSB]
+        R_b <= 8'd0;
     end
     else 
     begin

@@ -11,8 +11,8 @@ reg [31:0] H_m; //registro di supporto per le operazioni successive
 assign H_modified = H_m;
 always_comb
 begin
-    H_m = H;
-    H_m[(I*4)+: 4] = ((H[(I*4)+:4] ^ S) << I) | ((H[(I*4)+:4] ^ S) >> (4 - I));
+    H_m = H; 
+    H_m[(I*4)+: 4] = ((H[(((I+1)%8)*4)+:4] ^ S) << (I/2)%4) | ((H[(((I+1)%8)*4)+:4] ^ S) >> (4 - (I/2)%4));
 end
 
 endmodule

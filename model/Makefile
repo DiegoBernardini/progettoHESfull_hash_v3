@@ -3,7 +3,7 @@ CC  =  gcc
 
 AR  =  ar
 # flag di compilazione
-CFLAGS  += -std=c99 -Wall -Werror -g -DDEBUG
+CFLAGS  += -std=c99 -Wall -Werror -g #-DDEBUG
 ARFLAGS  =  rvs
 
 # nome della cartella che contiene i file includes

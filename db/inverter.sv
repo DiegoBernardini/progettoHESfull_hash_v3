@@ -1,3 +1,5 @@
+//invert the positions of the nipples
+
 module inverter (
     input  wire [31:0] H_in
     ,output wire [0:31] H_out

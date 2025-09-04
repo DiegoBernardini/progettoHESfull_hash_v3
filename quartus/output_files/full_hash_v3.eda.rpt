@@ -1,5 +1,5 @@
 EDA Netlist Writer report for full_hash_v3
-Sat Aug 30 22:48:51 2025
+Sun Aug 31 12:01:52 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -35,7 +35,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                                       ;
 +---------------------------+------------------------------------------------------+
-; EDA Netlist Writer Status ; No Output Files Generated - Sat Aug 30 22:48:51 2025 ;
+; EDA Netlist Writer Status ; No Output Files Generated - Sun Aug 31 12:01:52 2025 ;
 ; Revision Name             ; full_hash_v3                                         ;
 ; Top-level Entity Name     ; full_hash                                            ;
 ; Family                    ; Cyclone V                                            ;
@@ -48,13 +48,13 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Sat Aug 30 22:48:49 2025
-Info: Command: quartus_eda --read_settings_files=on --write_settings_files=off full_hash_v3 -c full_hash_v3
+    Info: Processing started: Sun Aug 31 12:01:50 2025
+Info: Command: quartus_eda --read_settings_files=on --write_settings_files=off full_hash -c full_hash_v3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Warning (199027): Can't generate output files. Specify command-line options to generate output files, or update EDA tool settings using GUI or Tcl script.
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4715 megabytes
-    Info: Processing ended: Sat Aug 30 22:48:51 2025
+    Info: Peak virtual memory: 4714 megabytes
+    Info: Processing ended: Sun Aug 31 12:01:52 2025
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 

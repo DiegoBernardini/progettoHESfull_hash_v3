@@ -1,5 +1,5 @@
 Analysis & Synthesis report for full_hash_v3
-Sat Aug 30 22:46:50 2025
+Sun Aug 31 12:00:19 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -45,15 +45,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Aug 30 22:46:50 2025          ;
+; Analysis & Synthesis Status     ; Successful - Sun Aug 31 12:00:19 2025          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; full_hash_v3                                   ;
 ; Top-level Entity Name           ; full_hash                                      ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
 ; Total registers                 ; 116                                            ;
-; Total pins                      ; 47                                             ;
-; Total virtual pins              ; 0                                              ;
+; Total pins                      ; 1                                              ;
+; Total virtual pins              ; 46                                             ;
 ; Total block memory bits         ; 0                                              ;
 ; Total DSP Blocks                ; 0                                              ;
 ; Total HSSI RX PCSs              ; 0                                              ;
@@ -190,7 +190,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 120       ;
+; Estimate of Logic utilization (ALMs needed) ; 147       ;
 ;                                             ;           ;
 ; Combinational ALUT usage for logic          ; 178       ;
 ;     -- 7 input functions                    ; 1         ;
@@ -201,14 +201,15 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;           ;
 ; Dedicated logic registers                   ; 116       ;
 ;                                             ;           ;
-; I/O pins                                    ; 47        ;
+; Virtual pins                                ; 46        ;
+; I/O pins                                    ; 1         ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 116       ;
-; Total fan-out                               ; 1293      ;
-; Average fan-out                             ; 3.33      ;
+; Total fan-out                               ; 1247      ;
+; Average fan-out                             ; 3.65      ;
 +---------------------------------------------+-----------+
 
 
@@ -217,7 +218,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------+----------------+--------------+
 ; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                            ; Entity Name    ; Library Name ;
 +------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------+----------------+--------------+
-; |full_hash                         ; 178 (0)             ; 116 (0)                   ; 0                 ; 0          ; 47   ; 0            ; |full_hash                                                     ; full_hash      ; work         ;
+; |full_hash                         ; 178 (0)             ; 116 (0)                   ; 0                 ; 0          ; 1    ; 46           ; |full_hash                                                     ; full_hash      ; work         ;
 ;    |control_part:control|          ; 20 (20)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |full_hash|control_part:control                                ; control_part   ; work         ;
 ;    |operative_part:operative|      ; 158 (124)           ; 104 (104)                 ; 0                 ; 0          ; 0    ; 0            ; |full_hash|operative_part:operative                            ; operative_part ; work         ;
 ;       |C6:modulo_c6|               ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |full_hash|operative_part:operative|C6:modulo_c6               ; C6             ; work         ;
@@ -339,8 +340,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Sat Aug 30 22:46:38 2025
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off full_hash_v3 -c full_hash_v3
+    Info: Processing started: Sun Aug 31 12:00:06 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off full_hash -c full_hash_v3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file /universita/magistrale/hes/progettohesfull_hash_v3/db/xor_shift.sv
@@ -380,14 +381,69 @@ Info (276014): Found 1 instances of uninferred RAM logic
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 262 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 13 input pins
-    Info (21059): Implemented 34 output pins
-    Info (21061): Implemented 215 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+Info (15717): Design contains 46 virtual pins; timing numbers associated with paths containing virtual pins are estimates
+    Info (15719): Pin "R_h[31]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[30]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[29]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[28]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[27]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[26]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[25]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[24]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[23]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[22]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[21]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[20]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[19]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[18]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[17]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[16]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[15]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[14]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[13]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[12]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[11]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[10]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[9]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[8]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[7]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[6]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[5]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[4]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[3]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[2]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[1]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "R_h[0]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
+    Info (15719): Pin "F_rtr" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 10
+    Info (15719): Pin "H_ready" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 11
+    Info (15718): Pin "start" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 5
+    Info (15718): Pin "End_of_File" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 7
+    Info (15718): Pin "rst_n" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 4
+    Info (15718): Pin "F_dr" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 8
+    Info (15718): Pin "Byte[5]" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 6
+    Info (15718): Pin "Byte[4]" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 6
+    Info (15718): Pin "Byte[6]" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 6
+    Info (15718): Pin "Byte[7]" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 6
+    Info (15718): Pin "Byte[0]" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 6
+    Info (15718): Pin "Byte[1]" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 6
+    Info (15718): Pin "Byte[3]" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 6
+    Info (15718): Pin "Byte[2]" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 6
+Warning (15752): Ignored 7 Virtual Pin logic option assignments
+    Warning (15751): Ignored Virtual Pin assignment to "control_part:control".
+    Warning (15751): Ignored Virtual Pin assignment to "digest".
+    Warning (15751): Ignored Virtual Pin assignment to "inverter:invertitore".
+    Warning (15751): Ignored Virtual Pin assignment to "i".
+    Warning (15751): Ignored Virtual Pin assignment to "operative_part:operative".
+    Warning (15751): Ignored Virtual Pin assignment to "control_part:control|validate_input".
+    Warning (15751): Ignored Virtual Pin assignment to "real_digest".
+Info (21057): Implemented 254 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 0 output pins
+    Info (21061): Implemented 253 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
     Info: Peak virtual memory: 4828 megabytes
-    Info: Processing ended: Sat Aug 30 22:46:50 2025
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Processing ended: Sun Aug 31 12:00:19 2025
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:31
 
 

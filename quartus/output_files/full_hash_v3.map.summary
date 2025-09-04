@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Sat Aug 30 22:46:50 2025
+Analysis & Synthesis Status : Successful - Sun Aug 31 12:00:19 2025
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : full_hash_v3
 Top-level Entity Name : full_hash
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
 Total registers : 116
-Total pins : 47
-Total virtual pins : 0
+Total pins : 1
+Total virtual pins : 46
 Total block memory bits : 0
 Total DSP Blocks : 0
 Total HSSI RX PCSs : 0

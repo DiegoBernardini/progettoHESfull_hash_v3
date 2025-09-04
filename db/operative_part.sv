@@ -70,7 +70,7 @@ always_ff @(posedge clock or negedge rstn) begin
     end
     else 
     begin
-        if(validate_input == 1) begin
+        if(validate_input == 1) begin 
             R_c <= R_c + 1;
             R_b <= B;
         end 

@@ -1,14 +1,14 @@
-Fitter Status : Successful - Sat Aug 30 22:48:00 2025
+Fitter Status : Successful - Sun Aug 31 12:01:19 2025
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : full_hash_v3
 Top-level Entity Name : full_hash
 Family : Cyclone V
 Device : 5CGXFC9D6F27C7
 Timing Models : Final
-Logic utilization (in ALMs) : 116 / 113,560 ( < 1 % )
-Total registers : 116
-Total pins : 47 / 378 ( 12 % )
-Total virtual pins : 0
+Logic utilization (in ALMs) : 140 / 113,560 ( < 1 % )
+Total registers : 155
+Total pins : 1 / 378 ( < 1 % )
+Total virtual pins : 46
 Total block memory bits : 0 / 12,492,800 ( 0 % )
 Total RAM Blocks : 0 / 1,220 ( 0 % )
 Total DSP Blocks : 0 / 342 ( 0 % )

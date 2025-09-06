@@ -1,9 +1,44 @@
-D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/m6.sv {1 {vlog -work work -sv -stats=none D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/m6.sv
+D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/xor_shift.sv {1 {vlog -work work -sv -stats=none D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/xor_shift.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module xor_shift
+
+Top level modules:
+	xor_shift
+
+} {} {}} D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv {1 {vlog -work work -sv -stats=none D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module full_hash
+
+Top level modules:
+	full_hash
+
+} {} {}} D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv {1 {vlog -work work -sv -stats=none D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module control_part
+
+Top level modules:
+	control_part
+
+} {} {}} D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/inverter.sv {1 {vlog -work work -sv -stats=none D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/inverter.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module inverter
+
+Top level modules:
+	inverter
+
+} {} {}} D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/m6.sv {1 {vlog -work work -sv -stats=none D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/m6.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module M6
 
 Top level modules:
 	M6
+
+} {} {}} D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv {1 {vlog -work work -sv -stats=none D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module testbench
+
+Top level modules:
+	testbench
 
 } {} {}} D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/sbox.sv {1 {vlog -work work -sv -stats=none D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/sbox.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -11,6 +46,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	sbox
+
+} {} {}} D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv {1 {vlog -work work -sv -stats=none D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module operative_part
+
+Top level modules:
+	operative_part
 
 } {} {}} D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/c6.sv {1 {vlog -work work -sv -stats=none D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/c6.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

@@ -59,9 +59,9 @@ module control_part(
         begin
           R_i<=3'b000;
         end
-        else if(switch_operation== 1'b1 && End_of_File == 1'b0 && H_ready == 1'b0) //per incrementare dopo l'arrivo di End_of_File, perché il contantore R_i prende 3 cicli in più quindi la seconda operazione non parte da 0, ma da 2, è necessario resettare I
+        else if(switch_operation== 1'b1 && End_of_File == 1'b0 && next_iteration == 1'b0) //per incrementare dopo l'arrivo di End_of_File, perché il contantore R_i prende 3 cicli in più quindi la seconda operazione non parte da 0, ma da 2, è necessario resettare I
          begin
-          R_i<=R_i+1;;
+          R_i<=R_i+1;
         end
       
     // blocco per il controllo Eof
@@ -113,9 +113,13 @@ module control_part(
         begin
           F_rtr_s <=1'b0;
         end
-        else
-        begin
+        else if(F_rtr == 1'b0)
+        begin 
           F_rtr_s <= ric_12;
+        end 
+        else if(F_dr == 1'b1)
+        begin
+          F_rtr_s<=1'b0;
         end
     //blocco per il controllo di validate_input
     always_ff @(posedge clk or negedge rst_n ) 

@@ -32,7 +32,7 @@ module testbench;
   string test = "CiaoMondo";
   integer test_reset = $urandom_range(0,test.len()); // posizione in cui avviene il reset
   integer test_start = $urandom_range(0,test.len()); // posizione in cui si tenta di ripremere il tast start
-
+   integer ritardo = $urandom_range(0,test.len()); 
   // 2. --- Istanza del DUT (Design Under Test) ---
   // Collega i segnali della testbench alle porte del modulo da testare
   full_hash dut (
@@ -186,7 +186,7 @@ module testbench;
       F_dr        = 1'b1;
       wait(F_rtr == 1);     
       Byte        = test[i];
-      $display("Byte: %1c",Byte);      
+    
 
       @(posedge clk);
       
@@ -214,6 +214,56 @@ module testbench;
     $display("Valore Hash finale (R_h) = 0x%h", R_h);
 
    // --- Fine test Start bloccato
+
+  
+    // --- inizio test su ritardo ----
+     rst_n = 1'b0;
+    $display("Test di Esecuzione con Reset Casuale");
+    F_dr  = 1'b0;
+    Byte  = 8'h00;
+    End_of_File = 1'b0;
+    #(CLK_PERIOD * 5);
+    rst_n = 1'b1; // Rilascia il reset
+    start = 1'b0;
+    
+    // --- Inizio del Test ---
+    $display("Tempo: %0t ns -> Invio del segnale di start.", $time);
+    start = 1'b1;
+    @(posedge clk);
+    start = 1'b0;
+    rst_n = 1'b1; 
+    
+    $display("Ritardo: %0d", ritardo);
+
+    for (i = 0; i < test.len(); i = i + 1) begin
+      // Aspetta che il DUT sia pronto a ricevere (F_rtr == 1) 
+      if(i == 0)
+      begin
+       #(CLK_PERIOD*500);
+      end
+      F_dr        = 1'b1;
+      wait(F_rtr == 1);     
+      Byte        = test[i];      
+
+      @(posedge clk);
+      
+      F_dr = 1'b0;
+      wait(F_rtr == 0);
+
+
+     
+    end
+    wait(F_rtr == 1);
+    End_of_File = 1'b1;
+    wait(F_rtr == 0);
+    End_of_File = 1'b0;
+
+    $display("Tempo: %0t ns -> Tutti i byte sono stati inviati. Attendo il risultato...", $time);
+    
+    wait(H_ready == 1)
+    
+    $display("Valore Hash finale (R_h) = 0x%h", R_h);
+
 
 
    // --- Inizio test Valore vuoto;
@@ -265,6 +315,7 @@ module testbench;
     wait(H_ready == 1)
     
     $display("Valore Hash finale (R_h) = 0x%h", R_h);
+    // -----  Fine test valore vuoto ---- 
 
     $stop;
   end

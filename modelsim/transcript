@@ -1,14 +1,4 @@
 # Compile of c6.sv was successful.
-# Compile of control_part.sv failed with 3 errors.
-# Compile of full_hash_v3.sv was successful.
-# Compile of m6.sv was successful.
-# Compile of operative_part.sv was successful.
-# Compile of sbox.sv was successful.
-# Compile of xor_shift.sv was successful.
-# Compile of testbench.sv was successful.
-# Compile of inverter.sv was successful.
-# 9 compiles, 1 failed with 3 errors.
-# Compile of c6.sv was successful.
 # Compile of control_part.sv was successful.
 # Compile of full_hash_v3.sv was successful.
 # Compile of m6.sv was successful.
@@ -20,7 +10,7 @@
 # 9 compiles, 0 failed with no errors.
 vsim -gui work.testbench
 # vsim -gui work.testbench 
-# Start time: 19:41:42 on Sep 03,2025
+# Start time: 18:48:28 on Sep 05,2025
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.full_hash
@@ -61,9 +51,9 @@ run -all
 # Tempo: 65750000 ns -> Invio del segnale di start.
 # Tempo: 65770000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
 # Valore Hash finale (R_h) = 0xd869708f
-# ** Note: $stop    : D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv(270)
+# ** Note: $stop    : D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv(269)
 #    Time: 65930 ns  Iteration: 2  Instance: /testbench
-# Break in Module testbench at D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv line 270
+# Break in Module testbench at D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv line 269
 # Compile of c6.sv was successful.
 # Compile of control_part.sv was successful.
 # Compile of full_hash_v3.sv was successful.
@@ -75,10 +65,455 @@ run -all
 # Compile of inverter.sv was successful.
 # 9 compiles, 0 failed with no errors.
 vsim -gui work.testbench
-# End time: 20:06:00 on Sep 03,2025, Elapsed time: 0:24:18
+# End time: 18:52:37 on Sep 05,2025, Elapsed time: 0:04:09
+# Errors: 0, Warnings: 3
+# vsim -gui work.testbench 
+# Start time: 18:52:37 on Sep 05,2025
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.full_hash
+# Loading work.control_part
+# Loading work.operative_part
+# Loading work.M6
+# Loading work.C6
+# Loading work.sbox
+# Loading work.xor_shift
+# Loading work.inverter
+run -all
+# Avvio della simulazione ...
+# Test di esecuzione regolare
+# Tempo: 0 ns -> Invio del segnale di start.
+# Tempo: 17690000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 17990000 ns -> Invio del segnale di start.
+# Punto di reset: 6 Lettera
+# Tempo: 29890000 ns -> Reset rilasciato.
+# Tempo: 47550000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di esecuzione blocco start
+# Tempo: 47810000 ns -> Invio del segnale di start.
+# Punto di start: 4
+# Tempo: 65490000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test valore vuoto
+# Tempo: 65750000 ns -> Invio del segnale di start.
+# Tempo: 65770000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xd869708f
+# ** Note: $stop    : D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv(269)
+#    Time: 65930 ns  Iteration: 2  Instance: /testbench
+# Break in Module testbench at D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv line 269
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful.
+# Compile of sbox.sv was successful.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv was successful.
+# Compile of inverter.sv was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -gui work.testbench
+# End time: 19:05:16 on Sep 05,2025, Elapsed time: 0:12:39
+# Errors: 0, Warnings: 2
+# vsim -gui work.testbench 
+# Start time: 19:05:16 on Sep 05,2025
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.full_hash
+# Loading work.control_part
+# Loading work.operative_part
+# Loading work.M6
+# Loading work.C6
+# Loading work.sbox
+# Loading work.xor_shift
+# Loading work.inverter
+run -all
+# Avvio della simulazione ...
+# Test di esecuzione regolare
+# Tempo: 0 ns -> Invio del segnale di start.
+# Tempo: 17690000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 17990000 ns -> Invio del segnale di start.
+# Punto di reset: 6 Lettera
+# Tempo: 29890000 ns -> Reset rilasciato.
+# Tempo: 47550000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di esecuzione blocco start
+# Tempo: 47810000 ns -> Invio del segnale di start.
+# Punto di start: 4
+# Tempo: 65490000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test valore vuoto
+# Tempo: 65750000 ns -> Invio del segnale di start.
+# Tempo: 65770000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xd869708f
+# Test di Esecuzione con Reset Casuale
+# Tempo: 66030000 ns -> Invio del segnale di start.
+# Ritardo: 6
+# Tempo: 66050000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xd869708f
+# ** Note: $stop    : D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv(316)
+#    Time: 66210 ns  Iteration: 2  Instance: /testbench
+# Break in Module testbench at D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv line 316
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful.
+# Compile of sbox.sv was successful.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv was successful.
+# Compile of inverter.sv was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -gui work.testbench
+# End time: 19:06:48 on Sep 05,2025, Elapsed time: 0:01:32
+# Errors: 0, Warnings: 2
+# vsim -gui work.testbench 
+# Start time: 19:06:48 on Sep 05,2025
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.full_hash
+# Loading work.control_part
+# Loading work.operative_part
+# Loading work.M6
+# Loading work.C6
+# Loading work.sbox
+# Loading work.xor_shift
+# Loading work.inverter
+run -all
+# Avvio della simulazione ...
+# Test di esecuzione regolare
+# Tempo: 0 ns -> Invio del segnale di start.
+# Tempo: 17690000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 17990000 ns -> Invio del segnale di start.
+# Punto di reset: 6 Lettera
+# Tempo: 29890000 ns -> Reset rilasciato.
+# Tempo: 47550000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di esecuzione blocco start
+# Tempo: 47810000 ns -> Invio del segnale di start.
+# Punto di start: 4
+# Tempo: 65490000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 65750000 ns -> Invio del segnale di start.
+# Ritardo: 6
+# Tempo: 85370000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test valore vuoto
+# Tempo: 85630000 ns -> Invio del segnale di start.
+# Tempo: 85650000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xd869708f
+# ** Note: $stop    : D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv(317)
+#    Time: 85810 ns  Iteration: 2  Instance: /testbench
+# Break in Module testbench at D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv line 317
+restart
+add wave -position insertpoint sim:/testbench/dut/*
+run -all
+# Avvio della simulazione ...
+# Test di esecuzione regolare
+# Tempo: 0 ns -> Invio del segnale di start.
+# Tempo: 17690000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 17990000 ns -> Invio del segnale di start.
+# Punto di reset: 6 Lettera
+# Tempo: 29890000 ns -> Reset rilasciato.
+# Tempo: 47550000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di esecuzione blocco start
+# Tempo: 47810000 ns -> Invio del segnale di start.
+# Punto di start: 4
+# Tempo: 65490000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 65750000 ns -> Invio del segnale di start.
+# Ritardo: 6
+# Tempo: 85370000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test valore vuoto
+# Tempo: 85630000 ns -> Invio del segnale di start.
+# Tempo: 85650000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xd869708f
+# ** Note: $stop    : D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv(317)
+#    Time: 85810 ns  Iteration: 2  Instance: /testbench
+# Break in Module testbench at D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv line 317
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful.
+# Compile of sbox.sv was successful.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv was successful.
+# Compile of inverter.sv was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -gui work.testbench
+# End time: 19:13:47 on Sep 05,2025, Elapsed time: 0:06:59
+# Errors: 0, Warnings: 2
+# vsim -gui work.testbench 
+# Start time: 19:13:47 on Sep 05,2025
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.full_hash
+# Loading work.control_part
+# Loading work.operative_part
+# Loading work.M6
+# Loading work.C6
+# Loading work.sbox
+# Loading work.xor_shift
+# Loading work.inverter
+run -all
+# Avvio della simulazione ...
+# Test di esecuzione regolare
+# Tempo: 0 ns -> Invio del segnale di start.
+# Tempo: 17690000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 17990000 ns -> Invio del segnale di start.
+# Punto di reset: 6 Lettera
+# Tempo: 29890000 ns -> Reset rilasciato.
+# Tempo: 47550000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di esecuzione blocco start
+# Tempo: 47810000 ns -> Invio del segnale di start.
+# Punto di start: 4
+# Tempo: 65490000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 65750000 ns -> Invio del segnale di start.
+# Ritardo: 6
+# Tempo: 85990000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test valore vuoto
+# Tempo: 86250000 ns -> Invio del segnale di start.
+# Tempo: 86270000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xd869708f
+# ** Note: $stop    : D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv(320)
+#    Time: 86430 ns  Iteration: 2  Instance: /testbench
+# Break in Module testbench at D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv line 320
+add wave -position insertpoint sim:/testbench/dut/*
+restart
+run -all
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# Avvio della simulazione ...
+# Test di esecuzione regolare
+# Tempo: 0 ns -> Invio del segnale di start.
+# Tempo: 17690000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 17990000 ns -> Invio del segnale di start.
+# Punto di reset: 6 Lettera
+# Tempo: 29890000 ns -> Reset rilasciato.
+# Tempo: 47550000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di esecuzione blocco start
+# Tempo: 47810000 ns -> Invio del segnale di start.
+# Punto di start: 4
+# Tempo: 65490000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 65750000 ns -> Invio del segnale di start.
+# Ritardo: 6
+# Tempo: 85990000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test valore vuoto
+# Tempo: 86250000 ns -> Invio del segnale di start.
+# Tempo: 86270000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xd869708f
+# ** Note: $stop    : D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv(320)
+#    Time: 86430 ns  Iteration: 2  Instance: /testbench
+# Break in Module testbench at D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv line 320
+restart
+add wave -position insertpoint  \
+sim:/testbench/dut/control/F_dr \
+sim:/testbench/dut/control/F_rtr \
+sim:/testbench/dut/control/F_rtr_s \
+sim:/testbench/dut/control/R_i \
+sim:/testbench/dut/control/R_r \
+sim:/testbench/dut/control/ric_12 \
+sim:/testbench/dut/control/validate_input
+run -all
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# Avvio della simulazione ...
+# Test di esecuzione regolare
+# Tempo: 0 ns -> Invio del segnale di start.
+# Tempo: 17690000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 17990000 ns -> Invio del segnale di start.
+# Punto di reset: 6 Lettera
+# Tempo: 29890000 ns -> Reset rilasciato.
+# Tempo: 47550000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di esecuzione blocco start
+# Tempo: 47810000 ns -> Invio del segnale di start.
+# Punto di start: 4
+# Tempo: 65490000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 65750000 ns -> Invio del segnale di start.
+# Ritardo: 6
+# Tempo: 85990000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test valore vuoto
+# Tempo: 86250000 ns -> Invio del segnale di start.
+# Tempo: 86270000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xd869708f
+# ** Note: $stop    : D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv(320)
+#    Time: 86430 ns  Iteration: 2  Instance: /testbench
+# Break in Module testbench at D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv line 320
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful.
+# Compile of sbox.sv was successful.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv was successful.
+# Compile of inverter.sv was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -gui work.testbench
+# End time: 19:23:47 on Sep 05,2025, Elapsed time: 0:10:00
+# Errors: 0, Warnings: 2
+# vsim -gui work.testbench 
+# Start time: 19:23:47 on Sep 05,2025
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.full_hash
+# Loading work.control_part
+# Loading work.operative_part
+# Loading work.M6
+# Loading work.C6
+# Loading work.sbox
+# Loading work.xor_shift
+# Loading work.inverter
+add wave -position insertpoint  \
+sim:/testbench/Byte
+run -all
+# Avvio della simulazione ...
+# Test di esecuzione regolare
+# Tempo: 0 ns -> Invio del segnale di start.
+# Tempo: 17690000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 17990000 ns -> Invio del segnale di start.
+# Punto di reset: 6 Lettera
+# Tempo: 29890000 ns -> Reset rilasciato.
+# Tempo: 47550000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di esecuzione blocco start
+# Tempo: 47810000 ns -> Invio del segnale di start.
+# Punto di start: 4
+# Tempo: 65490000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 65750000 ns -> Invio del segnale di start.
+# Ritardo: 6
+# Tempo: 93670000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test valore vuoto
+# Tempo: 93930000 ns -> Invio del segnale di start.
+# Tempo: 93950000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xd869708f
+# ** Note: $stop    : D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv(320)
+#    Time: 94110 ns  Iteration: 2  Instance: /testbench
+# Break in Module testbench at D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv line 320
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful.
+# Compile of sbox.sv was successful.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv was successful.
+# Compile of inverter.sv was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -gui work.testbench
+# End time: 19:28:03 on Sep 05,2025, Elapsed time: 0:04:16
+# Errors: 0, Warnings: 2
+# vsim -gui work.testbench 
+# Start time: 19:28:03 on Sep 05,2025
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.full_hash
+# Loading work.control_part
+# Loading work.operative_part
+# Loading work.M6
+# Loading work.C6
+# Loading work.sbox
+# Loading work.xor_shift
+# Loading work.inverter
+# WARNING: No extended dataflow license exists
+# Compile of c6.sv was successful.
+# Compile of control_part.sv failed with 1 errors.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful.
+# Compile of sbox.sv was successful.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv was successful.
+# Compile of inverter.sv was successful.
+# 9 compiles, 1 failed with 1 error.
+# Compile of c6.sv was successful.
+# Compile of control_part.sv failed with 1 errors.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful.
+# Compile of sbox.sv was successful.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv was successful.
+# Compile of inverter.sv was successful.
+# 9 compiles, 1 failed with 1 error.
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful.
+# Compile of sbox.sv was successful.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv was successful.
+# Compile of inverter.sv was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -gui work.testbench
+# End time: 20:27:44 on Sep 05,2025, Elapsed time: 0:59:41
 # Errors: 0, Warnings: 4
 # vsim -gui work.testbench 
-# Start time: 20:06:00 on Sep 03,2025
+# Start time: 20:27:44 on Sep 05,2025
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.full_hash
+# Loading work.control_part
+# Loading work.operative_part
+# Loading work.M6
+# Loading work.C6
+# Loading work.sbox
+# Loading work.xor_shift
+# Loading work.inverter
+# WARNING: No extended dataflow license exists
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful.
+# Compile of sbox.sv was successful.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv was successful.
+# Compile of inverter.sv was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -gui work.testbench
+# End time: 20:28:05 on Sep 05,2025, Elapsed time: 0:00:21
+# Errors: 0, Warnings: 2
+# vsim -gui work.testbench 
+# Start time: 20:28:05 on Sep 05,2025
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.full_hash
@@ -98,29 +533,227 @@ run -all
 # Test di Esecuzione con Reset Casuale
 # Tempo: 17990000 ns -> Invio del segnale di start.
 # Punto di reset: 6 Lettera
-# Tempo: 29890000 ns -> Reset rilasciato.
-# Tempo: 47550000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Tempo: 29870000 ns -> Reset rilasciato.
+# Tempo: 47530000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
 # Valore Hash finale (R_h) = 0xca461ab7
 # Test di esecuzione blocco start
-# Tempo: 47810000 ns -> Invio del segnale di start.
+# Tempo: 47790000 ns -> Invio del segnale di start.
 # Punto di start: 4
-# Byte: C
-# Byte: i
-# Byte: a
-# Byte: o
-# Byte: M
-# Byte: o
-# Byte: n
-# Byte: d
-# Byte: o
-# Tempo: 65490000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Tempo: 65470000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 65730000 ns -> Invio del segnale di start.
+# Ritardo: 6
+# Tempo: 91450000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
 # Valore Hash finale (R_h) = 0xca461ab7
 # Test valore vuoto
-# Tempo: 65750000 ns -> Invio del segnale di start.
-# Tempo: 65770000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Tempo: 91710000 ns -> Invio del segnale di start.
+# Tempo: 91750000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
 # Valore Hash finale (R_h) = 0xd869708f
-# ** Note: $stop    : D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv(270)
-#    Time: 65930 ns  Iteration: 2  Instance: /testbench
-# Break in Module testbench at D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv line 270
-# End time: 20:36:11 on Sep 03,2025, Elapsed time: 0:30:11
+# ** Note: $stop    : D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv(320)
+#    Time: 91910 ns  Iteration: 2  Instance: /testbench
+# Break in Module testbench at D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv line 320
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful.
+# Compile of sbox.sv was successful.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv was successful.
+# Compile of inverter.sv was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -gui work.testbench
+# End time: 20:29:21 on Sep 05,2025, Elapsed time: 0:01:16
+# Errors: 0, Warnings: 2
+# vsim -gui work.testbench 
+# Start time: 20:29:21 on Sep 05,2025
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.full_hash
+# Loading work.control_part
+# Loading work.operative_part
+# Loading work.M6
+# Loading work.C6
+# Loading work.sbox
+# Loading work.xor_shift
+# Loading work.inverter
+add wave -position insertpoint sim:/testbench/dut/*
+run -all
+# Avvio della simulazione ...
+# Test di esecuzione regolare
+# Tempo: 0 ns -> Invio del segnale di start.
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful.
+# Compile of sbox.sv was successful.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv was successful.
+# Compile of inverter.sv was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -gui work.testbench
+# End time: 20:33:29 on Sep 05,2025, Elapsed time: 0:04:08
+# Errors: 0, Warnings: 2
+# vsim -gui work.testbench 
+# Start time: 20:33:29 on Sep 05,2025
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.full_hash
+# Loading work.control_part
+# Loading work.operative_part
+# Loading work.M6
+# Loading work.C6
+# Loading work.sbox
+# Loading work.xor_shift
+# Loading work.inverter
+run -all
+# Avvio della simulazione ...
+# Test di esecuzione regolare
+# Tempo: 0 ns -> Invio del segnale di start.
+# Tempo: 17690000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 17990000 ns -> Invio del segnale di start.
+# Punto di reset: 6 Lettera
+# Tempo: 29870000 ns -> Reset rilasciato.
+# Tempo: 47530000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di esecuzione blocco start
+# Tempo: 47790000 ns -> Invio del segnale di start.
+# Punto di start: 4
+# Tempo: 65470000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 65730000 ns -> Invio del segnale di start.
+# Ritardo: 6
+# Tempo: 91450000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test valore vuoto
+# Tempo: 91710000 ns -> Invio del segnale di start.
+# Tempo: 91750000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xd869708f
+# ** Note: $stop    : D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv(320)
+#    Time: 91910 ns  Iteration: 2  Instance: /testbench
+# Break in Module testbench at D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv line 320
+restart
+add wave -position insertpoint sim:/testbench/dut/*
+run -all
+# Avvio della simulazione ...
+# Test di esecuzione regolare
+# Tempo: 0 ns -> Invio del segnale di start.
+# Tempo: 17690000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 17990000 ns -> Invio del segnale di start.
+# Punto di reset: 6 Lettera
+# Tempo: 29870000 ns -> Reset rilasciato.
+# Tempo: 47530000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di esecuzione blocco start
+# Tempo: 47790000 ns -> Invio del segnale di start.
+# Punto di start: 4
+# Tempo: 65470000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 65730000 ns -> Invio del segnale di start.
+# Ritardo: 6
+# Tempo: 91450000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test valore vuoto
+# Tempo: 91710000 ns -> Invio del segnale di start.
+# Tempo: 91750000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xd869708f
+# ** Note: $stop    : D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv(320)
+#    Time: 91910 ns  Iteration: 2  Instance: /testbench
+# Break in Module testbench at D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv line 320
+# Compile of c6.sv was successful.
+# Compile of control_part.sv was successful.
+# Compile of full_hash_v3.sv was successful.
+# Compile of m6.sv was successful.
+# Compile of operative_part.sv was successful.
+# Compile of sbox.sv was successful.
+# Compile of xor_shift.sv was successful.
+# Compile of testbench.sv was successful.
+# Compile of inverter.sv was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -gui work.testbench
+# End time: 20:36:10 on Sep 05,2025, Elapsed time: 0:02:41
+# Errors: 0, Warnings: 2
+# vsim -gui work.testbench 
+# Start time: 20:36:10 on Sep 05,2025
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.full_hash
+# Loading work.control_part
+# Loading work.operative_part
+# Loading work.M6
+# Loading work.C6
+# Loading work.sbox
+# Loading work.xor_shift
+# Loading work.inverter
+# WARNING: No extended dataflow license exists
+run -all
+# Avvio della simulazione ...
+# Test di esecuzione regolare
+# Tempo: 0 ns -> Invio del segnale di start.
+# Tempo: 17690000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 17990000 ns -> Invio del segnale di start.
+# Punto di reset: 6 Lettera
+# Tempo: 29870000 ns -> Reset rilasciato.
+# Tempo: 47530000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di esecuzione blocco start
+# Tempo: 47790000 ns -> Invio del segnale di start.
+# Punto di start: 4
+# Tempo: 65470000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 65730000 ns -> Invio del segnale di start.
+# Ritardo: 6
+# Tempo: 93390000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test valore vuoto
+# Tempo: 93650000 ns -> Invio del segnale di start.
+# Tempo: 93690000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xd869708f
+# ** Note: $stop    : D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv(320)
+#    Time: 93850 ns  Iteration: 2  Instance: /testbench
+# Break in Module testbench at D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv line 320
+run
+restart
+add wave -position insertpoint sim:/testbench/dut/*
+run -all
+# Avvio della simulazione ...
+# Test di esecuzione regolare
+# Tempo: 0 ns -> Invio del segnale di start.
+# Tempo: 17690000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 17990000 ns -> Invio del segnale di start.
+# Punto di reset: 6 Lettera
+# Tempo: 29870000 ns -> Reset rilasciato.
+# Tempo: 47530000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di esecuzione blocco start
+# Tempo: 47790000 ns -> Invio del segnale di start.
+# Punto di start: 4
+# Tempo: 65470000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test di Esecuzione con Reset Casuale
+# Tempo: 65730000 ns -> Invio del segnale di start.
+# Ritardo: 6
+# Tempo: 93390000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xca461ab7
+# Test valore vuoto
+# Tempo: 93650000 ns -> Invio del segnale di start.
+# Tempo: 93690000 ns -> Tutti i byte sono stati inviati. Attendo il risultato...
+# Valore Hash finale (R_h) = 0xd869708f
+# ** Note: $stop    : D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv(320)
+#    Time: 93850 ns  Iteration: 2  Instance: /testbench
+# Break in Module testbench at D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/tb/testbench.sv line 320
+# End time: 20:37:52 on Sep 05,2025, Elapsed time: 0:01:42
 # Errors: 0, Warnings: 1

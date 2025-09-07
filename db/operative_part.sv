@@ -57,12 +57,12 @@ xor_shift modulo_xor_shift(
 
 
 always_ff @(posedge clock or negedge rstn) begin
-    if (!rstn) begin//casi reset     
+    if (!rstn) begin//casi reset  S_start   
         R_c <= 64'd0;
         R_h <= 32'h32FE1AF3; 
         R_b <= 8'd0;
     end
-    else if(real_start==1'b1) // problema se C non è inizializzato allo real_start non esiste e quindi non porta mai partire.
+    else if(real_start==1'b1) // S_start
     begin
         R_c <= 64'd0;
         R_h <= 32'h32FE1AF3; // dobbiamo scriverlo al contrario perché abbiamo scelto la notazione [MSB:LSB], nel modello in c++ ovviamente la notazione del vettore è [LSB:MSB]
@@ -70,12 +70,12 @@ always_ff @(posedge clock or negedge rstn) begin
     end
     else 
     begin
-        if(validate_input == 1) begin 
+        if(validate_input == 1) begin //S_OP1_RR
             R_c <= R_c + 1;
             R_b <= B;
         end 
 
-        if(validate_R_h == 1) begin
+        if(validate_R_h == 1) begin //S_OP1_RR e S_OP2_RI
             R_h <= xor_shift_out;
         end
     end

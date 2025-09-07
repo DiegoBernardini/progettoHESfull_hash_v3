@@ -47,18 +47,18 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	sbox
 
-} {} {}} D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv {1 {vlog -work work -sv -stats=none D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module operative_part
-
-Top level modules:
-	operative_part
-
 } {} {}} D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/c6.sv {1 {vlog -work work -sv -stats=none D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/c6.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module C6
 
 Top level modules:
 	C6
+
+} {} {}} D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv {1 {vlog -work work -sv -stats=none D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module operative_part
+
+Top level modules:
+	operative_part
 
 } {} {}}

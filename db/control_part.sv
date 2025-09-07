@@ -15,147 +15,187 @@ module control_part(
     ,output reg [2:0] R_i
 );
     
+
+    reg[2:0] state;
+    reg[2:0] next_state;
+    localparam  [2:0] S_start = 3'd0;
+    localparam  [2:0] S_read =  3'd1;
+    localparam  [2:0] S_OP1_RR = 3'd2;
+    localparam  [2:0] S_RI= 3'd3;
+    localparam  [2:0] S_WAIT1 = 3'd4;
+    localparam  [2:0] S_OP2_AZZERA = 3'd5;
+    localparam  [2:0] S_OP2_RI = 3'd6;
+    localparam  [2:0] S_END= 3'd7;
+    
+
     reg [3:0] R_r;
-    reg       Eof;
     reg       VLI; 
     reg       SW_O;
     reg       H_R;
     reg       F_rtr_s; 
-    wire disable_R_R,incrementation_round,next_iteration,case_empty_input,ric_12,real_start;
+    wire incrementation_round,ric_12,real_start, last_iteration;
     assign F_rtr = F_rtr_s;
-    assign case_empty_input = case_rc0 & End_of_File;
-    assign switch_operation = disable_R_R | case_empty_input;
-    assign disable_R_R = Eof & ric_12;
-    assign incrementation_round = (disable_R_R == 1'b1)?0:next_iteration;
+    assign switch_operation = SW_O;
+    assign incrementation_round = (R_i==3'd7)?1:0;
     assign validate_input = F_dr & F_rtr;
-    assign validate_R_H = VLI|SW_O; 
-    assign next_iteration = (R_i==3'd7)?1:0;  
-    assign ric_12 = (R_r == 4'd12)?1:0;
+    assign validate_R_H = VLI;  
+    assign last_iteration = (R_i == 3'd6)?1:0;
+    assign ric_12 = (R_r == 4'd11)?1:0;
     assign H_ready = H_R;
     assign real_start = case_rc0 & start;
 
-    // blocco per il controllo di R_i e R_r
     always_ff @(posedge clk or negedge rst_n ) 
-        if(!rst_n)
+      if(!rst_n)
+      begin
+        state <= S_start;
+      end
+      else if(real_start == 1'b1)
+      begin
+        state <= S_start;
+      end
+      else
+      begin
+        state <= next_state;
+      end
+
+    always_comb 
+        case(state)
+
+          S_start: 
+          begin
+            if(F_dr == 1 && F_rtr_s == 1)
+              next_state = S_read;
+            else if(F_rtr_s == 1 && End_of_File == 1)
+              next_state = S_OP2_AZZERA;
+            else 
+              next_state = state;              
+           
+          end
+
+          S_read:
+            begin
+                next_state = S_OP1_RR;
+            end
+
+          S_OP1_RR: 
+            begin
+              if(ric_12 == 0  && incrementation_round == 0)
+              next_state = S_RI;
+              else 
+              next_state = state; 
+            end
+
+          S_RI:
+            begin
+              if(incrementation_round == 1 && ric_12 == 0)
+                next_state = S_OP1_RR;
+              else if(ric_12 == 1 && last_iteration == 1)
+                next_state = S_WAIT1;
+               else 
+              next_state = state; 
+            end
+
+          S_WAIT1:
+            begin
+            if(F_dr == 1)
+              next_state = S_read;
+            else if(End_of_File == 1)
+              next_state = S_OP2_AZZERA;
+               else 
+              next_state = state; 
+            end
+
+          S_OP2_AZZERA:
+            begin
+              next_state = S_OP2_RI;
+            end
+
+          S_OP2_RI:
+            begin
+            if(last_iteration == 1)
+              next_state = S_END;
+               else 
+              next_state = state; 
+            end
+          S_END:
+            begin
+            next_state = S_END;
+            end
+        endcase
+    // blocco per il controllo di R_i e R_r
+    always_ff @(posedge clk) 
+                   
+        if(state == S_start || state == S_WAIT1) 
         begin
             R_i <= 3'b000;
-            R_r <= 4'b0000; 
-            
-        end 
-        else if(real_start == 1'b1 || validate_input == 1'b1) 
-        begin
-            R_i <= 3'b000;
-            R_r <= 4'b0000;  
-        end 
-        else if(next_iteration == 1'b0 && switch_operation == 1'b0)
+            R_r <= 4'b1111;  
+        end  
+        else if(state == S_RI) 
         begin
             R_i <= R_i+1;
-        end else if (incrementation_round == 1'b1)
+        end else if (state == S_OP1_RR) 
         begin  
             R_i<=3'b000;
             R_r<=R_r+1;
         end
-        else if(switch_operation== 1'b1 && End_of_File == 1'b1) 
+        else if(state == S_OP2_AZZERA) 
         begin
           R_i<=3'b000;
-        end
-        else if(switch_operation== 1'b1 && End_of_File == 1'b0 && next_iteration == 1'b0) //per incrementare dopo l'arrivo di End_of_File, perché il contantore R_i prende 3 cicli in più quindi la seconda operazione non parte da 0, ma da 2, è necessario resettare I
+        end                                                                             
+        else if(state == S_OP2_RI) //per incrementare dopo l'arrivo di End_of_File, perché il contantore R_i prende 3 cicli in più quindi la seconda operazione non parte da 0, ma da 2, è necessario resettare I
          begin
           R_i<=R_i+1;
         end
       
-    // blocco per il controllo Eof
-    always_ff @(posedge clk or negedge rst_n ) 
-
-      if(!rst_n)
-      begin
-        Eof <=0;
-      end 
-      else if(real_start == 1'b1)
-      begin
-        Eof <=0;
-      end
-      else if(End_of_File == 1'b1)
-      begin
-        Eof <= End_of_File;
-      end
-
 
       // blocco per il controllo SW_O
-      always_ff @(posedge clk or negedge rst_n ) 
-      if(!rst_n)
+    always_ff @(posedge clk or negedge rst_n ) 
+     if(state == S_start) //S_start
       begin
         SW_O <=0;
       end 
-      else if(real_start == 1'b1)
-      begin
-        SW_O <=0;
-      end
-      else if(switch_operation == 1'b1 && R_i==3'd2) 
+      else if(state == S_OP2_AZZERA) //S_OP2_RI
       begin
         SW_O <= 1'b1;
       end
-      else if(case_empty_input == 1'b1)
-      begin
-         SW_O <= 1'b1;
-      end
-    // blocco per il controllo del flag ready_to_read
+    
     always_ff @(posedge clk or negedge rst_n ) 
-        if(!rst_n)
+       if(state == S_start) //S_start
         begin 
             F_rtr_s <=1'b1;
-        end
-        else if(real_start == 1'b1) 
-        begin
-          F_rtr_s <= 1'b1;
-        end
-        else if(Eof == 1'b1)
-        begin
-          F_rtr_s <=1'b0;
-        end
-        else if(F_rtr == 1'b0)
+        end //S_start
+
+        else if(state == S_WAIT1)
         begin 
-          F_rtr_s <= ric_12;
+          F_rtr_s <= 1'b1;
         end 
-        else if(F_dr == 1'b1)
+        else if(state == S_read || state == S_OP2_AZZERA) //S_WAIT1
         begin
           F_rtr_s<=1'b0;
         end
     //blocco per il controllo di validate_input
     always_ff @(posedge clk or negedge rst_n ) 
-        if(!rst_n)
+       if(state == S_start) //S_start
         begin
           VLI <=1'b0;
         end
-        else if(real_start == 1)
-        begin
-          VLI <= 1'b0;
-        end
-        else if(F_dr == 1 &&  F_rtr ==1)
+        else if(state == S_OP1_RR || state == S_OP2_AZZERA) //S_Read
         begin
           VLI <= 1'b1;
         end
-        else if(ric_12 == 1)
+        else if(state == S_WAIT1 || state == S_END) //S_OP1_RR
         begin
           VLI<= 1'b0;
         end
     //blocco per il controllo di H_ready
     always_ff  @(posedge clk or negedge rst_n )
-      if(!rst_n)
+     if(state == S_start) //S_start
         begin 
             H_R <=1'b0;
-        end
-        else if(real_start == 1'b1) 
-        begin
-          H_R <= 1'b0;
-        end
-        else if(Eof == 1'b1 && next_iteration==1'b1)
+        end //S_start
+        else if(state == S_END) //END
         begin
           H_R <=1'b1;
-        end
-        else if(next_iteration == 1'b0)
-        begin
-          H_R <=1'b0;
         end
 
 endmodule

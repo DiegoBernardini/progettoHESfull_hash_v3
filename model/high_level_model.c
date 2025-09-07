@@ -8,6 +8,7 @@ uint8_t funzione_S(uint8_t M6);
 void prima_operazione(uint8_t M);
 uint8_t rotate_lower4(uint8_t byte, int i);
 //void print_bin(unsigned char x);
+void print_H();
 void seconda_operazione();
 uint8_t restituisci_C_i(int i);
 void compatta_H();
@@ -163,6 +164,7 @@ void prima_operazione(uint8_t M){
             uint8_t a = rotate_lower4((H[(i+1)%8]^funzione_S(crea_M6(M))),i);
             H[i] = a;
             DEBUG_PRINT("Valore %d di H dopo della rotate: %#X\n",i,H[i]);
+          
         }
     }
 }
@@ -184,6 +186,7 @@ void seconda_operazione(){
 
     for(int i = 0; i<8;i++){
        H[i] = rotate_lower4((H[(i+1)%8]^funzione_S(crea_C6(restituisci_C_i(i)))),i);
+      
     }
 
 }
@@ -193,3 +196,4 @@ void compatta_H(){
         Hf |= (H[i]&0x0F)<<(7-i)*4;
     }
 }
+

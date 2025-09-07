@@ -62,11 +62,7 @@ always_ff @(posedge clock or negedge rstn) begin
         R_h <= 32'h32FE1AF3; 
         R_b <= 8'd0;
     end
-<<<<<<< HEAD
-    else if(real_start==1'b1)
-=======
     else if(real_start==1'b1) // S_start
->>>>>>> gio
     begin
         R_c <= 64'd0;
         R_h <= 32'h32FE1AF3; //nel modello di alto livello la notazione del vettore è [LSB:MSB]

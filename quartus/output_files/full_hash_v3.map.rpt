@@ -1,5 +1,5 @@
 Analysis & Synthesis report for full_hash_v3
-Sun Aug 31 12:00:19 2025
+Sun Sep  7 22:06:00 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -10,15 +10,7 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Inverted Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -42,27 +34,22 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
-+---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Aug 31 12:00:19 2025          ;
-; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
-; Revision Name                   ; full_hash_v3                                   ;
-; Top-level Entity Name           ; full_hash                                      ;
-; Family                          ; Cyclone V                                      ;
-; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 116                                            ;
-; Total pins                      ; 1                                              ;
-; Total virtual pins              ; 46                                             ;
-; Total block memory bits         ; 0                                              ;
-; Total DSP Blocks                ; 0                                              ;
-; Total HSSI RX PCSs              ; 0                                              ;
-; Total HSSI PMA RX Deserializers ; 0                                              ;
-; Total HSSI TX PCSs              ; 0                                              ;
-; Total HSSI PMA TX Serializers   ; 0                                              ;
-; Total PLLs                      ; 0                                              ;
-; Total DLLs                      ; 0                                              ;
-+---------------------------------+------------------------------------------------+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++-----------------------------+------------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Sun Sep  7 22:06:00 2025              ;
+; Quartus Prime Version       ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name               ; full_hash_v3                                   ;
+; Top-level Entity Name       ; full_hash                                      ;
+; Family                      ; Cyclone V                                      ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                      ;
+; Total registers             ; N/A until Partition Merge                      ;
+; Total pins                  ; N/A until Partition Merge                      ;
+; Total virtual pins          ; N/A until Partition Merge                      ;
+; Total block memory bits     ; N/A until Partition Merge                      ;
+; Total PLLs                  ; N/A until Partition Merge                      ;
+; Total DLLs                  ; N/A until Partition Merge                      ;
++-----------------------------+------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -161,177 +148,11 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                  ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                              ; Library ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
-; ../db/xor_shift.sv               ; yes             ; User SystemVerilog HDL File  ; D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/xor_shift.sv      ;         ;
-; ../db/sbox.sv                    ; yes             ; User SystemVerilog HDL File  ; D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/sbox.sv           ;         ;
-; ../db/operative_part.sv          ; yes             ; User SystemVerilog HDL File  ; D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv ;         ;
-; ../db/m6.sv                      ; yes             ; User SystemVerilog HDL File  ; D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/m6.sv             ;         ;
-; ../db/inverter.sv                ; yes             ; User SystemVerilog HDL File  ; D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/inverter.sv       ;         ;
-; ../db/full_hash_v3.sv            ; yes             ; User SystemVerilog HDL File  ; D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv   ;         ;
-; ../db/control_part.sv            ; yes             ; User SystemVerilog HDL File  ; D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv   ;         ;
-; ../db/c6.sv                      ; yes             ; User SystemVerilog HDL File  ; D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/c6.sv             ;         ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 147       ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 178       ;
-;     -- 7 input functions                    ; 1         ;
-;     -- 6 input functions                    ; 57        ;
-;     -- 5 input functions                    ; 17        ;
-;     -- 4 input functions                    ; 16        ;
-;     -- <=3 input functions                  ; 87        ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 116       ;
-;                                             ;           ;
-; Virtual pins                                ; 46        ;
-; I/O pins                                    ; 1         ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 116       ;
-; Total fan-out                               ; 1247      ;
-; Average fan-out                             ; 3.65      ;
-+---------------------------------------------+-----------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                          ;
-+------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------+----------------+--------------+
-; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                            ; Entity Name    ; Library Name ;
-+------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------+----------------+--------------+
-; |full_hash                         ; 178 (0)             ; 116 (0)                   ; 0                 ; 0          ; 1    ; 46           ; |full_hash                                                     ; full_hash      ; work         ;
-;    |control_part:control|          ; 20 (20)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |full_hash|control_part:control                                ; control_part   ; work         ;
-;    |operative_part:operative|      ; 158 (124)           ; 104 (104)                 ; 0                 ; 0          ; 0    ; 0            ; |full_hash|operative_part:operative                            ; operative_part ; work         ;
-;       |C6:modulo_c6|               ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |full_hash|operative_part:operative|C6:modulo_c6               ; C6             ; work         ;
-;       |M6:modulo_m6|               ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |full_hash|operative_part:operative|M6:modulo_m6               ; M6             ; work         ;
-;       |sbox:modulo_sbox|           ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |full_hash|operative_part:operative|sbox:modulo_sbox           ; sbox           ; work         ;
-;       |xor_shift:modulo_xor_shift| ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |full_hash|operative_part:operative|xor_shift:modulo_xor_shift ; xor_shift      ; work         ;
-+------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------+----------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 116   ;
-; Number of registers using Synchronous Clear  ; 76    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 116   ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 105   ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------+
-; Inverted Register Statistics                        ;
-+-------------------------------------------+---------+
-; Inverted Register                         ; Fan out ;
-+-------------------------------------------+---------+
-; operative_part:operative|xor_shift_in[28] ; 2       ;
-; operative_part:operative|xor_shift_in[29] ; 2       ;
-; operative_part:operative|xor_shift_in[25] ; 2       ;
-; operative_part:operative|xor_shift_in[20] ; 2       ;
-; operative_part:operative|xor_shift_in[21] ; 2       ;
-; operative_part:operative|xor_shift_in[22] ; 2       ;
-; operative_part:operative|xor_shift_in[23] ; 3       ;
-; operative_part:operative|xor_shift_in[17] ; 2       ;
-; operative_part:operative|xor_shift_in[18] ; 2       ;
-; operative_part:operative|xor_shift_in[19] ; 2       ;
-; operative_part:operative|xor_shift_in[12] ; 2       ;
-; operative_part:operative|xor_shift_in[9]  ; 2       ;
-; operative_part:operative|xor_shift_in[11] ; 2       ;
-; operative_part:operative|xor_shift_in[4]  ; 2       ;
-; operative_part:operative|xor_shift_in[5]  ; 2       ;
-; operative_part:operative|xor_shift_in[6]  ; 2       ;
-; operative_part:operative|xor_shift_in[7]  ; 3       ;
-; operative_part:operative|xor_shift_in[0]  ; 2       ;
-; operative_part:operative|xor_shift_in[1]  ; 2       ;
-; control_part:control|F_rtr_s              ; 4       ;
-; Total number of inverted registers = 20   ;         ;
-+-------------------------------------------+---------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
-; 3:1                ; 72 bits   ; 144 LEs       ; 0 LEs                ; 144 LEs                ; Yes        ; |full_hash|operative_part:operative|R_c[56]                         ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |full_hash|control_part:control|R_r[1]                              ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |full_hash|operative_part:operative|xor_shift_in[10]                ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |full_hash|operative_part:operative|xor_shift_in[14]                ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |full_hash|operative_part:operative|xor_shift_in[24]                ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |full_hash|operative_part:operative|xor_shift_in[30]                ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |full_hash|operative_part:operative|xor_shift_in[3]                 ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |full_hash|control_part:control|R_i[1]                              ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |full_hash|operative_part:operative|xor_shift_in[4]                 ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |full_hash|operative_part:operative|xor_shift_in[18]                ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |full_hash|operative_part:operative|xor_shift_in[21]                ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |full_hash|operative_part:operative|xor_shift_in[28]                ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |full_hash|operative_part:operative|C6:modulo_c6|Mux7               ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |full_hash|operative_part:operative|xor_shift:modulo_xor_shift|Mux3 ;
-; 9:1                ; 4 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |full_hash|operative_part:operative|sbox_in[4]                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 116                         ;
-;     CLR               ; 7                           ;
-;     CLR SCLR          ; 4                           ;
-;     ENA CLR           ; 33                          ;
-;     ENA CLR SCLR      ; 72                          ;
-; arriav_lcell_comb     ; 198                         ;
-;     arith             ; 64                          ;
-;         1 data inputs ; 64                          ;
-;     extend            ; 1                           ;
-;         7 data inputs ; 1                           ;
-;     normal            ; 133                         ;
-;         1 data inputs ; 20                          ;
-;         2 data inputs ; 11                          ;
-;         3 data inputs ; 12                          ;
-;         4 data inputs ; 16                          ;
-;         5 data inputs ; 17                          ;
-;         6 data inputs ; 57                          ;
-; boundary_port         ; 47                          ;
-;                       ;                             ;
-; Max LUT depth         ; 7.30                        ;
-; Average LUT depth     ; 5.28                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:01     ;
-+----------------+--------------+
 
 
 +-------------------------------+
@@ -340,110 +161,34 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Sun Aug 31 12:00:06 2025
+    Info: Processing started: Sun Sep  7 22:05:50 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off full_hash -c full_hash_v3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file /universita/magistrale/hes/progettohesfull_hash_v3/db/xor_shift.sv
-    Info (12023): Found entity 1: xor_shift File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/xor_shift.sv Line: 1
+    Info (12023): Found entity 1: xor_shift File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/xor_shift.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file /universita/magistrale/hes/progettohesfull_hash_v3/db/sbox.sv
-    Info (12023): Found entity 1: sbox File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/sbox.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /universita/magistrale/hes/progettohesfull_hash_v3/db/operative_part.sv
-    Info (12023): Found entity 1: operative_part File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv Line: 1
+    Info (12023): Found entity 1: sbox File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/sbox.sv Line: 3
+Error (10170): Verilog HDL syntax error at operative_part.sv(65) near text: "<<<";  expecting "end". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv Line: 65
+Error (10170): Verilog HDL syntax error at operative_part.sv(67) near text: "===";  expecting ";". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv Line: 67
+Error (10170): Verilog HDL syntax error at operative_part.sv(69) near text: ">>>";  expecting ";". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv Line: 69
+Error (10170): Verilog HDL syntax error at operative_part.sv(75) near text: "else";  expecting "end". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv Line: 75
+Error (10112): Ignored design unit "operative_part" at operative_part.sv(1) due to previous errors File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv Line: 1
+Info (12021): Found 0 design units, including 0 entities, in source file /universita/magistrale/hes/progettohesfull_hash_v3/db/operative_part.sv
 Info (12021): Found 1 design units, including 1 entities, in source file /universita/magistrale/hes/progettohesfull_hash_v3/db/m6.sv
-    Info (12023): Found entity 1: M6 File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/m6.sv Line: 1
+    Info (12023): Found entity 1: M6 File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/m6.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file /universita/magistrale/hes/progettohesfull_hash_v3/db/inverter.sv
-    Info (12023): Found entity 1: inverter File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/inverter.sv Line: 1
+    Info (12023): Found entity 1: inverter File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/inverter.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file /universita/magistrale/hes/progettohesfull_hash_v3/db/full_hash_v3.sv
-    Info (12023): Found entity 1: full_hash File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 1
+    Info (12023): Found entity 1: full_hash File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file /universita/magistrale/hes/progettohesfull_hash_v3/db/control_part.sv
-    Info (12023): Found entity 1: control_part File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv Line: 1
+    Info (12023): Found entity 1: control_part File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file /universita/magistrale/hes/progettohesfull_hash_v3/db/c6.sv
-    Info (12023): Found entity 1: C6 File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/c6.sv Line: 1
-Info (12127): Elaborating entity "full_hash" for the top level hierarchy
-Info (12128): Elaborating entity "control_part" for hierarchy "control_part:control" File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 33
-Warning (10230): Verilog HDL assignment warning at control_part.sv(27): truncated value with size 32 to match size of target (1) File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv Line: 27
-Warning (10230): Verilog HDL assignment warning at control_part.sv(30): truncated value with size 32 to match size of target (1) File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv Line: 30
-Warning (10230): Verilog HDL assignment warning at control_part.sv(31): truncated value with size 32 to match size of target (1) File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv Line: 31
-Warning (10230): Verilog HDL assignment warning at control_part.sv(51): truncated value with size 32 to match size of target (3) File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv Line: 51
-Warning (10230): Verilog HDL assignment warning at control_part.sv(55): truncated value with size 32 to match size of target (4) File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv Line: 55
-Warning (10230): Verilog HDL assignment warning at control_part.sv(63): truncated value with size 32 to match size of target (3) File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv Line: 63
-Warning (10230): Verilog HDL assignment warning at control_part.sv(67): truncated value with size 32 to match size of target (3) File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv Line: 67
-Info (12128): Elaborating entity "operative_part" for hierarchy "operative_part:operative" File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 46
-Warning (10230): Verilog HDL assignment warning at operative_part.sv(28): truncated value with size 32 to match size of target (1) File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv Line: 28
-Info (12128): Elaborating entity "M6" for hierarchy "operative_part:operative|M6:modulo_m6" File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv Line: 38
-Info (12128): Elaborating entity "C6" for hierarchy "operative_part:operative|C6:modulo_c6" File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv Line: 43
-Info (12128): Elaborating entity "sbox" for hierarchy "operative_part:operative|sbox:modulo_sbox" File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv Line: 48
-Info (12128): Elaborating entity "xor_shift" for hierarchy "operative_part:operative|xor_shift:modulo_xor_shift" File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv Line: 55
-Info (12128): Elaborating entity "inverter" for hierarchy "inverter:invertitore" File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 51
-Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276004): RAM logic "operative_part:operative|sbox:modulo_sbox|Ram0" is uninferred due to inappropriate RAM size File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/sbox.sv Line: 8
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (15717): Design contains 46 virtual pins; timing numbers associated with paths containing virtual pins are estimates
-    Info (15719): Pin "R_h[31]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[30]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[29]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[28]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[27]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[26]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[25]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[24]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[23]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[22]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[21]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[20]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[19]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[18]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[17]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[16]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[15]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[14]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[13]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[12]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[11]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[10]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[9]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[8]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[7]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[6]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[5]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[4]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[3]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[2]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[1]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "R_h[0]" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
-    Info (15719): Pin "F_rtr" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 10
-    Info (15719): Pin "H_ready" is virtual output pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 11
-    Info (15718): Pin "start" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 5
-    Info (15718): Pin "End_of_File" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 7
-    Info (15718): Pin "rst_n" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 4
-    Info (15718): Pin "F_dr" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 8
-    Info (15718): Pin "Byte[5]" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 6
-    Info (15718): Pin "Byte[4]" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 6
-    Info (15718): Pin "Byte[6]" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 6
-    Info (15718): Pin "Byte[7]" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 6
-    Info (15718): Pin "Byte[0]" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 6
-    Info (15718): Pin "Byte[1]" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 6
-    Info (15718): Pin "Byte[3]" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 6
-    Info (15718): Pin "Byte[2]" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 6
-Warning (15752): Ignored 7 Virtual Pin logic option assignments
-    Warning (15751): Ignored Virtual Pin assignment to "control_part:control".
-    Warning (15751): Ignored Virtual Pin assignment to "digest".
-    Warning (15751): Ignored Virtual Pin assignment to "inverter:invertitore".
-    Warning (15751): Ignored Virtual Pin assignment to "i".
-    Warning (15751): Ignored Virtual Pin assignment to "operative_part:operative".
-    Warning (15751): Ignored Virtual Pin assignment to "control_part:control|validate_input".
-    Warning (15751): Ignored Virtual Pin assignment to "real_digest".
-Info (21057): Implemented 254 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 0 output pins
-    Info (21061): Implemented 253 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 4828 megabytes
-    Info: Processing ended: Sun Aug 31 12:00:19 2025
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:31
+    Info (12023): Found entity 1: C6 File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/c6.sv Line: 3
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 5 errors, 1 warning
+    Error: Peak virtual memory: 4765 megabytes
+    Error: Processing ended: Sun Sep  7 22:06:00 2025
+    Error: Elapsed time: 00:00:10
+    Error: Total CPU time (on all processors): 00:00:25
 
 

@@ -76,7 +76,6 @@ module testbench;
       F_dr        = 1'b1;
       wait(F_rtr == 1);     
       Byte        = test[i];     
-   
       @(posedge clk);
       
       F_dr = 1'b0;
@@ -123,9 +122,9 @@ module testbench;
       F_dr        = 1'b1;
       wait(F_rtr == 1);     
       Byte        = test[i];      
-
+    
       @(posedge clk);
-      
+     
       F_dr = 1'b0;
       wait(F_rtr == 0);
 
@@ -139,7 +138,7 @@ module testbench;
           #(CLK_PERIOD * 5);
           rst_n = 1'b1; // Rilascia il reset
           $display("Tempo: %0t ns -> Reset rilasciato.", $time);
-        
+          @(posedge clk);
         end
       
      
@@ -218,7 +217,7 @@ module testbench;
   
     // --- inizio test su ritardo ----
      rst_n = 1'b0;
-    $display("Test di Esecuzione con Reset Casuale");
+    $display("Test di Esecuzione con Ritardo");
     F_dr  = 1'b0;
     Byte  = 8'h00;
     End_of_File = 1'b0;
@@ -240,6 +239,7 @@ module testbench;
       if(i == 0)
       begin
        #(CLK_PERIOD*500);
+       @(posedge clk);
       end
       F_dr        = 1'b1;
       wait(F_rtr == 1);     

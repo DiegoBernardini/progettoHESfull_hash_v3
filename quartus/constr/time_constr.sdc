@@ -5,7 +5,7 @@
 #
 # ------------------------------------------------------------------- #
 # set CLK_PERIOD_NS 10.9 // senza virtual pin
-set CLK_PERIOD_NS 9.35
+set CLK_PERIOD_NS 7.42
 set MIN_IO_DELAY [expr double($CLK_PERIOD_NS)/10.0]
 set MAX_IO_DELAY [expr double($CLK_PERIOD_NS)/5.0]
 create_clock -name clk -period $CLK_PERIOD_NS [get_ports clk]

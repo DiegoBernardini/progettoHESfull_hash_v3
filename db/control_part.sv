@@ -149,7 +149,7 @@ module control_part(
       
 
       // blocco per il controllo SW_O
-    always_ff @(posedge clk or negedge rst_n ) 
+    always_ff @(posedge clk  ) 
      if(state == S_start) //S_start
       begin
         SW_O <=0;
@@ -159,7 +159,7 @@ module control_part(
         SW_O <= 1'b1;
       end
     
-    always_ff @(posedge clk or negedge rst_n ) 
+    always_ff @(posedge clk  ) 
        if(state == S_start) //S_start
         begin 
             F_rtr_s <=1'b1;
@@ -174,7 +174,7 @@ module control_part(
           F_rtr_s<=1'b0;
         end
     //blocco per il controllo di validate_input
-    always_ff @(posedge clk or negedge rst_n ) 
+    always_ff @(posedge clk  ) 
        if(state == S_start) //S_start
         begin
           VLI <=1'b0;
@@ -188,7 +188,7 @@ module control_part(
           VLI<= 1'b0;
         end
     //blocco per il controllo di H_ready
-    always_ff  @(posedge clk or negedge rst_n )
+    always_ff  @(posedge clk  )
      if(state == S_start) //S_start
         begin 
             H_R <=1'b0;

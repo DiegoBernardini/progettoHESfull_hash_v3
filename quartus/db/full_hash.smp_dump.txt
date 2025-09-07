@@ -1,0 +1,11 @@
+
+State Machine - |full_hash|control_part:control|state
+Name state.S_END state.S_OP2_RI state.S_OP2_AZZERA state.S_WAIT1 state.S_RI state.S_OP1_RR state.S_read state.S_start 
+state.S_start 0 0 0 0 0 0 0 0 
+state.S_read 0 0 0 0 0 0 1 1 
+state.S_OP1_RR 0 0 0 0 0 1 0 1 
+state.S_RI 0 0 0 0 1 0 0 1 
+state.S_WAIT1 0 0 0 1 0 0 0 1 
+state.S_OP2_AZZERA 0 0 1 0 0 0 0 1 
+state.S_OP2_RI 0 1 0 0 0 0 0 1 
+state.S_END 1 0 0 0 0 0 0 1 

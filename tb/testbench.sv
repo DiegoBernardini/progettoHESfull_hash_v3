@@ -236,7 +236,7 @@ module testbench;
 
     for (i = 0; i < test.len(); i = i + 1) begin
       // Aspetta che il DUT sia pronto a ricevere (F_rtr == 1) 
-      if(i == 0)
+      if(i == ritardo)
       begin
        #(CLK_PERIOD*500);
        @(posedge clk);

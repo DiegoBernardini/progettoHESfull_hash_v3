@@ -1,14 +1,14 @@
 module operative_part (
     input   wire [7:0] B
-    ,input  wire start //flag di start  
+    ,input  wire start 
     ,input  wire clock
     ,input  wire rstn
-    ,input  wire validate_input //c
-    ,input  wire switch_operation //e
-    ,input  wire validate_R_h //f
+    ,input  wire validate_input 
+    ,input  wire switch_operation 
+    ,input  wire validate_R_h 
     ,input  wire [2:0] R_i
-    ,output reg [31:0] R_h //digest
-    ,output wire case_R_c_zero //h
+    ,output reg [31:0] R_h 
+    ,output wire case_R_c_zero 
 );
     
     reg [7:0]  R_b;
@@ -57,12 +57,12 @@ xor_shift modulo_xor_shift(
 
 
 always_ff @(posedge clock or negedge rstn) begin
-    if (!rstn) begin//casi reset  S_start   
+    if (!rstn) begin//casi rese   
         R_c <= 64'd0;
         R_h <= 32'h32FE1AF3; 
         R_b <= 8'd0;
     end
-    else if(real_start==1'b1) // S_start
+    else if(real_start==1'b1) 
     begin
         R_c <= 64'd0;
         R_h <= 32'h32FE1AF3; //nel modello di alto livello la notazione del vettore è [LSB:MSB]
@@ -70,12 +70,12 @@ always_ff @(posedge clock or negedge rstn) begin
     end
     else 
     begin
-        if(validate_input == 1) begin //S_OP1_RR
+        if(validate_input == 1) begin 
             R_c <= R_c + 1;
             R_b <= B;
         end 
 
-        if(validate_R_h == 1) begin //S_OP1_RR e S_OP2_RI
+        if(validate_R_h == 1) begin 
             R_h <= xor_shift_out;
         end
     end

@@ -7,7 +7,6 @@ uint8_t crea_M6(uint8_t M);
 uint8_t funzione_S(uint8_t M6);
 void prima_operazione(uint8_t M);
 uint8_t rotate_lower4(uint8_t byte, int i);
-//void print_bin(unsigned char x);
 void print_H();
 void seconda_operazione();
 uint8_t restituisci_C_i(int i);
@@ -168,13 +167,7 @@ void prima_operazione(uint8_t M){
         }
     }
 }
-/*
-void print_bin(unsigned char x) {
-    for (int i = 7; i >= 0; i--) {
-        printf("%d", (x >> i) & 1);
-    }
-}
-*/
+
 
 //restituisce il byte i-esimo di C
 uint8_t restituisci_C_i(int i){

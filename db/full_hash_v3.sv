@@ -36,15 +36,15 @@ module full_hash (
 
     operative_part operative(
      .B(Byte)
-    ,.start(start) //flag di start  
+    ,.start(start)  
     ,.clock(clk)
     ,.rstn(rst_n)
-    ,.validate_input(vi) //c
-    ,.switch_operation(sw_o) //e
-    ,.validate_R_h(v_R_H) //f
+    ,.validate_input(vi)
+    ,.switch_operation(sw_o)
+    ,.validate_R_h(v_R_H)
     ,.R_i(i)
     ,.R_h(digest)
-    ,.case_R_c_zero(case_rc0)//h
+    ,.case_R_c_zero(case_rc0)
     );
 
     inverter invertitore(  

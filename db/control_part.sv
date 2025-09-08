@@ -15,7 +15,7 @@ module control_part(
     ,output reg [2:0] R_i
 );
     
-
+    // --- Registro stato e stati
     reg[2:0] state;
     reg[2:0] next_state;
     localparam  [2:0] S_start = 3'd0;
@@ -43,7 +43,7 @@ module control_part(
     assign ric_12 = (R_r == 4'd11)?1:0;
     assign H_ready = H_R;
     assign real_start = case_rc0 & start;
-
+  // avanzamento stati
     always_ff @(posedge clk or negedge rst_n ) 
       if(!rst_n)
       begin
@@ -57,7 +57,7 @@ module control_part(
       begin
         state <= next_state;
       end
-
+    // Gestione degli stati
     always_comb 
         case(state)
 
@@ -142,7 +142,7 @@ module control_part(
         begin
           R_i<=3'b000;
         end                                                                             
-        else if(state == S_OP2_RI) //per incrementare dopo l'arrivo di End_of_File, perché il contantore R_i prende 3 cicli in più quindi la seconda operazione non parte da 0, ma da 2, è necessario resettare I
+        else if(state == S_OP2_RI) 
          begin
           R_i<=R_i+1;
         end
@@ -150,50 +150,50 @@ module control_part(
 
       // blocco per il controllo SW_O
     always_ff @(posedge clk  ) 
-     if(state == S_start) //S_start
+     if(state == S_start) 
       begin
         SW_O <=0;
       end 
-      else if(state == S_OP2_AZZERA) //S_OP2_RI
+      else if(state == S_OP2_AZZERA) 
       begin
         SW_O <= 1'b1;
       end
     
     always_ff @(posedge clk  ) 
-       if(state == S_start) //S_start
+       if(state == S_start) 
         begin 
             F_rtr_s <=1'b1;
-        end //S_start
+        end 
 
         else if(state == S_WAIT1)
         begin 
           F_rtr_s <= 1'b1;
         end 
-        else if(state == S_read || state == S_OP2_AZZERA) //S_WAIT1
+        else if(state == S_read || state == S_OP2_AZZERA) 
         begin
           F_rtr_s<=1'b0;
         end
     //blocco per il controllo di validate_input
     always_ff @(posedge clk  ) 
-       if(state == S_start) //S_start
+       if(state == S_start) 
         begin
           VLI <=1'b0;
         end
-        else if(state == S_OP1_RR || state == S_OP2_AZZERA) //S_Read
+        else if(state == S_OP1_RR || state == S_OP2_AZZERA) 
         begin
           VLI <= 1'b1;
         end
-        else if(state == S_WAIT1 || state == S_END) //S_OP1_RR
+        else if(state == S_WAIT1 || state == S_END) 
         begin
           VLI<= 1'b0;
         end
     //blocco per il controllo di H_ready
     always_ff  @(posedge clk  )
-     if(state == S_start) //S_start
+     if(state == S_start) 
         begin 
             H_R <=1'b0;
-        end //S_start
-        else if(state == S_END) //END
+        end 
+        else if(state == S_END) 
         begin
           H_R <=1'b1;
         end

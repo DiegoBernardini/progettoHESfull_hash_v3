@@ -18,6 +18,7 @@ module full_hash (
     wire [2:0] i;
     wire [31:0] digest;
     wire [0:31] real_digest; // output finale
+   
     assign R_h = real_digest;
     control_part control(
         .clk(clk)
@@ -27,6 +28,7 @@ module full_hash (
         ,.start(start)
         ,.case_rc0(case_rc0)
         ,.F_rtr(F_rtr)
+       
         ,.switch_operation(sw_o)
         ,.H_ready(H_ready)
         ,.validate_input(vi)

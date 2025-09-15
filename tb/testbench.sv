@@ -30,6 +30,9 @@ module testbench;
 
   // Memoria per contenere i dati di test
   string test = "CiaoMondo";
+  string test2 = "CiaoMondo";
+  string test3 = "CiaoMondo!";
+  string test4 = "CiaoCiao!";
   integer test_reset = $urandom_range(0,test.len()); // posizione in cui avviene il reset
   integer test_start = $urandom_range(0,test.len()); // posizione in cui si tenta di ripremere il tast start
    integer ritardo = $urandom_range(0,test.len()); 
@@ -316,6 +319,262 @@ module testbench;
     
     $display("Valore Hash finale (R_h) = 0x%h", R_h);
     // -----  Fine test valore vuoto ---- 
+
+   test = "CiaoMondo";
+    // ------ Inizio Test con 2 stringhe uguali ----
+      $display("Test stringhe uguali ");
+    rst_n = 1'b0;
+   
+    F_dr  = 1'b0;
+    Byte  = 8'h00;
+    End_of_File = 1'b0;
+    #(CLK_PERIOD * 5);
+    rst_n = 1'b1; // Rilascia il reset
+    start = 1'b0;
+   
+   
+    
+    start = 1'b1;
+    @(posedge clk);
+    start = 1'b0;
+
+  
+    for (i = 0; i < test.len(); i = i + 1) begin
+     
+      F_dr        = 1'b1;
+      wait(F_rtr == 1);     
+      Byte        = test[i];     
+      @(posedge clk);
+      
+      F_dr = 1'b0;
+      wait(F_rtr == 0);
+     
+    end
+    wait(F_rtr == 1);
+    End_of_File = 1'b1;
+    wait(F_rtr == 0);
+    End_of_File = 1'b0;
+
+    $display("Valore prima stringa: %s", test);
+    
+    wait(H_ready == 1)
+    
+    $display("Valore Hash finale (R_h) = 0x%h", R_h);
+
+
+    #(CLK_PERIOD * 2)
+
+     
+    rst_n = 1'b0;
+   
+    F_dr  = 1'b0;
+    Byte  = 8'h00;
+    End_of_File = 1'b0;
+    #(CLK_PERIOD * 5);
+    rst_n = 1'b1; // Rilascia il reset
+    start = 1'b0;
+   
+
+    start = 1'b1;
+    @(posedge clk);
+    start = 1'b0;
+
+    // --- Invio del flusso di dati con un ciclo 'for' ---
+    for (i = 0; i < test2.len(); i = i + 1) begin
+      // Aspetta che il DUT sia pronto a ricevere (F_rtr == 1) 
+      F_dr        = 1'b1;
+      wait(F_rtr == 1);     
+      Byte        = test2[i];     
+      @(posedge clk);
+      
+      F_dr = 1'b0;
+      wait(F_rtr == 0);
+     
+    end
+    wait(F_rtr == 1);
+    End_of_File = 1'b1;
+    wait(F_rtr == 0);
+    End_of_File = 1'b0;
+
+    $display("Valore seconda stringa: %s ", test2);
+    
+    wait(H_ready == 1)
+    
+    $display("Valore Hash finale (R_h) = 0x%h", R_h);
+
+
+    #(CLK_PERIOD * 2)
+    
+     // ------ Inizio Test con 2 stringhe simili ----
+    $display("Test stringhe simili ");
+     rst_n = 1'b0;
+   
+    F_dr  = 1'b0;
+    Byte  = 8'h00;
+    End_of_File = 1'b0;
+    #(CLK_PERIOD * 5);
+    rst_n = 1'b1; // Rilascia il reset
+    start = 1'b0;
+   
+   
+    
+    start = 1'b1;
+    @(posedge clk);
+    start = 1'b0;
+
+  
+    for (i = 0; i < test.len(); i = i + 1) begin
+     
+      F_dr        = 1'b1;
+      wait(F_rtr == 1);     
+      Byte        = test[i];     
+      @(posedge clk);
+      
+      F_dr = 1'b0;
+      wait(F_rtr == 0);
+     
+    end
+    wait(F_rtr == 1);
+    End_of_File = 1'b1;
+    wait(F_rtr == 0);
+    End_of_File = 1'b0;
+
+    $display("Valore prima stringa: %s", test);
+    
+    wait(H_ready == 1)
+    
+    $display("Valore Hash finale (R_h) = 0x%h", R_h);
+
+
+    #(CLK_PERIOD * 2)
+
+     
+     rst_n = 1'b0;
+   
+    F_dr  = 1'b0;
+    Byte  = 8'h00;
+    End_of_File = 1'b0;
+    #(CLK_PERIOD * 5);
+    rst_n = 1'b1; // Rilascia il reset
+    start = 1'b0;
+   
+
+    start = 1'b1;
+    @(posedge clk);
+    start = 1'b0;
+
+    // --- Invio del flusso di dati con un ciclo 'for' ---
+    for (i = 0; i < test3.len(); i = i + 1) begin
+      // Aspetta che il DUT sia pronto a ricevere (F_rtr == 1) 
+      F_dr        = 1'b1;
+      wait(F_rtr == 1);     
+      Byte        = test3[i];     
+      @(posedge clk);
+      
+      F_dr = 1'b0;
+      wait(F_rtr == 0);
+     
+    end
+    wait(F_rtr == 1);
+    End_of_File = 1'b1;
+    wait(F_rtr == 0);
+    End_of_File = 1'b0;
+
+    $display("Valore seconda stringa: %s ", test3);
+    
+    wait(H_ready == 1)
+    
+    $display("Valore Hash finale (R_h) = 0x%h", R_h);
+
+
+    #(CLK_PERIOD * 2)
+
+
+     
+     // ------ Inizio Test con 2 stringhe della stessa lunghezza ----
+    $display("Test stringhe simili ");
+    rst_n = 1'b0;
+    $display("Test di Esecuzione con Reset Casuale");
+    F_dr  = 1'b0;
+    Byte  = 8'h00;
+    End_of_File = 1'b0;
+    #(CLK_PERIOD * 5);
+    rst_n = 1'b1; // Rilascia il reset
+    start = 1'b0;
+   
+    
+    start = 1'b1;
+    @(posedge clk);
+    start = 1'b0;
+
+  
+    for (i = 0; i < test.len(); i = i + 1) begin
+     
+      F_dr        = 1'b1;
+      wait(F_rtr == 1);     
+      Byte        = test[i];     
+      @(posedge clk);
+      
+      F_dr = 1'b0;
+      wait(F_rtr == 0);
+     
+    end
+    wait(F_rtr == 1);
+    End_of_File = 1'b1;
+    wait(F_rtr == 0);
+    End_of_File = 1'b0;
+
+    $display("Valore prima stringa: %s", test);
+    
+    wait(H_ready == 1)
+    
+    $display("Valore Hash finale (R_h) = 0x%h", R_h);
+
+
+    #(CLK_PERIOD * 2)
+
+     
+    rst_n = 1'b0;
+    $display("Test di Esecuzione con Reset Casuale");
+    F_dr  = 1'b0;
+    Byte  = 8'h00;
+    End_of_File = 1'b0;
+    #(CLK_PERIOD * 5);
+    rst_n = 1'b1; // Rilascia il reset
+    start = 1'b0;
+   
+
+    start = 1'b1;
+    @(posedge clk);
+    start = 1'b0;
+
+    // --- Invio del flusso di dati con un ciclo 'for' ---
+    for (i = 0; i < test4.len(); i = i + 1) begin
+      // Aspetta che il DUT sia pronto a ricevere (F_rtr == 1) 
+      F_dr        = 1'b1;
+      wait(F_rtr == 1);     
+      Byte        = test4[i];     
+      @(posedge clk);
+      
+      F_dr = 1'b0;
+      wait(F_rtr == 0);
+     
+    end
+    wait(F_rtr == 1);
+    End_of_File = 1'b1;
+    wait(F_rtr == 0);
+    End_of_File = 1'b0;
+
+    $display("Valore seconda stringa: %s ", test4);
+    
+    wait(H_ready == 1)
+    
+    $display("Valore Hash finale (R_h) = 0x%h", R_h);
+
+
+    #(CLK_PERIOD * 2)
+    
+
 
     $stop;
   end

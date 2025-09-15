@@ -36,13 +36,14 @@ module control_part(
     wire incrementation_round,ric_12,real_start, last_iteration;
     assign F_rtr = F_rtr_s;
     assign switch_operation = SW_O;
-    assign incrementation_round = (R_i==3'd7)?1:0;
+    assign incrementation_round = (R_i==3'd7)?1'b1:1'b0;
     assign validate_input = F_dr & F_rtr;
     assign validate_R_H = VLI;  
-    assign last_iteration = (R_i == 3'd6)?1:0;
-    assign ric_12 = (R_r == 4'd11)?1:0;
+    assign last_iteration = (R_i == 3'd6)?1'b1:1'b0;
+    assign ric_12 = (R_r == 4'd11)?1'b1:1'b0;
     assign H_ready = H_R;
     assign real_start = case_rc0 & start;
+  
   // avanzamento stati
     always_ff @(posedge clk or negedge rst_n ) 
       if(!rst_n)
@@ -63,10 +64,10 @@ module control_part(
 
           S_start: 
           begin
-            if(F_dr == 1 && F_rtr_s == 1)
+            if(F_dr == 1'b1 && F_rtr_s == 1'b1)
               next_state = S_read;
-            else if(F_rtr_s == 1 && End_of_File == 1)
-              next_state = S_OP2_AZZERA;
+            else if(F_rtr_s == 1'b1 && End_of_File == 1'b1)
+              next_state = S_OP2_RI;
             else 
               next_state = state;              
            
@@ -79,7 +80,7 @@ module control_part(
 
           S_OP1_RR: 
             begin
-              if(ric_12 == 0  && incrementation_round == 0)
+              if(ric_12 == 1'b0  && incrementation_round == 1'b0)
               next_state = S_RI;
               else 
               next_state = state; 
@@ -87,9 +88,9 @@ module control_part(
 
           S_RI:
             begin
-              if(incrementation_round == 1 && ric_12 == 0)
+              if(incrementation_round == 1'b1 && ric_12 == 1'b0)
                 next_state = S_OP1_RR;
-              else if(ric_12 == 1 && last_iteration == 1)
+              else if(ric_12 == 1'b1 && last_iteration == 1'b1)
                 next_state = S_WAIT1;
                else 
               next_state = state; 
@@ -97,10 +98,10 @@ module control_part(
 
           S_WAIT1:
             begin
-            if(F_dr == 1)
+            if(F_dr == 1'b1)
               next_state = S_read;
-            else if(End_of_File == 1)
-              next_state = S_OP2_AZZERA;
+            else if(End_of_File == 1'b1)
+              next_state = S_OP1_AZZERA;
                else 
               next_state = state; 
             end
@@ -112,7 +113,7 @@ module control_part(
 
           S_OP2_RI:
             begin
-            if(last_iteration == 1)
+            if(last_iteration == 1'b1)
               next_state = S_END;
                else 
               next_state = state; 
@@ -132,19 +133,19 @@ module control_part(
         end  
         else if(state == S_RI) 
         begin
-            R_i <= R_i+1;
+            R_i <= R_i+3'd1;
         end else if (state == S_OP1_RR) 
         begin  
             R_i<=3'b000;
-            R_r<=R_r+1;
+            R_r<=R_r+3'd1;
         end
-        else if(state == S_OP2_AZZERA) 
+        else if(state == S_OP1_AZZERA) 
         begin
           R_i<=3'b000;
         end                                                                             
         else if(state == S_OP2_RI) 
          begin
-          R_i<=R_i+1;
+          R_i<=R_i+3'd1;
         end
       
 
@@ -154,7 +155,7 @@ module control_part(
       begin
         SW_O <=0;
       end 
-      else if(state == S_OP2_AZZERA) 
+      else if(state == S_OP2_RI) 
       begin
         SW_O <= 1'b1;
       end
@@ -169,7 +170,7 @@ module control_part(
         begin 
           F_rtr_s <= 1'b1;
         end 
-        else if(state == S_read || state == S_OP2_AZZERA) 
+        else if(state == S_read || state == S_OP1_AZZERA) 
         begin
           F_rtr_s<=1'b0;
         end

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for full_hash_v3
-Sun Sep  7 22:19:40 2025
+Wed Sep 10 21:45:36 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -47,7 +47,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Sep  7 22:19:40 2025          ;
+; Analysis & Synthesis Status     ; Successful - Wed Sep 10 21:45:36 2025          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; full_hash_v3                                   ;
 ; Top-level Entity Name           ; full_hash                                      ;
@@ -371,7 +371,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Sun Sep  7 22:19:28 2025
+    Info: Processing started: Wed Sep 10 21:45:21 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off full_hash -c full_hash_v3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -393,14 +393,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file /univer
     Info (12023): Found entity 1: C6 File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/c6.sv Line: 3
 Info (12127): Elaborating entity "full_hash" for the top level hierarchy
 Info (12128): Elaborating entity "control_part" for hierarchy "control_part:control" File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 35
-Warning (10230): Verilog HDL assignment warning at control_part.sv(39): truncated value with size 32 to match size of target (1) File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv Line: 39
-Warning (10230): Verilog HDL assignment warning at control_part.sv(42): truncated value with size 32 to match size of target (1) File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv Line: 42
-Warning (10230): Verilog HDL assignment warning at control_part.sv(43): truncated value with size 32 to match size of target (1) File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv Line: 43
-Warning (10230): Verilog HDL assignment warning at control_part.sv(135): truncated value with size 32 to match size of target (3) File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv Line: 135
-Warning (10230): Verilog HDL assignment warning at control_part.sv(139): truncated value with size 32 to match size of target (4) File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv Line: 139
-Warning (10230): Verilog HDL assignment warning at control_part.sv(147): truncated value with size 32 to match size of target (3) File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/control_part.sv Line: 147
 Info (12128): Elaborating entity "operative_part" for hierarchy "operative_part:operative" File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 48
-Warning (10230): Verilog HDL assignment warning at operative_part.sv(28): truncated value with size 32 to match size of target (1) File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv Line: 28
 Info (12128): Elaborating entity "M6" for hierarchy "operative_part:operative|M6:modulo_m6" File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv Line: 38
 Info (12128): Elaborating entity "C6" for hierarchy "operative_part:operative|C6:modulo_c6" File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv Line: 43
 Info (12128): Elaborating entity "sbox" for hierarchy "operative_part:operative|sbox:modulo_sbox" File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/operative_part.sv Line: 48
@@ -460,20 +453,20 @@ Info (15717): Design contains 46 virtual pins; timing numbers associated with pa
     Info (15718): Pin "Byte[2]" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 8
     Info (15718): Pin "End_of_File" is virtual input pin File: D:/Universita/Magistrale/HES/progettoHESfull_hash_v3/db/full_hash_v3.sv Line: 9
 Warning (15752): Ignored 6 Virtual Pin logic option assignments
+    Warning (15751): Ignored Virtual Pin assignment to "control_part:control".
+    Warning (15751): Ignored Virtual Pin assignment to "real_digest".
+    Warning (15751): Ignored Virtual Pin assignment to "inverter:invertitore".
     Warning (15751): Ignored Virtual Pin assignment to "digest".
     Warning (15751): Ignored Virtual Pin assignment to "i".
-    Warning (15751): Ignored Virtual Pin assignment to "real_digest".
-    Warning (15751): Ignored Virtual Pin assignment to "control_part:control".
     Warning (15751): Ignored Virtual Pin assignment to "operative_part:operative".
-    Warning (15751): Ignored Virtual Pin assignment to "inverter:invertitore".
 Info (21057): Implemented 249 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 0 output pins
     Info (21061): Implemented 248 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
-    Info: Peak virtual memory: 4828 megabytes
-    Info: Processing ended: Sun Sep  7 22:19:40 2025
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:28
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4825 megabytes
+    Info: Processing ended: Wed Sep 10 21:45:36 2025
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:35
 
 

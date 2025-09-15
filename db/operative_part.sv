@@ -10,6 +10,7 @@ module operative_part (
     ,output reg [31:0] R_h 
     ,output wire case_R_c_zero 
 );
+   
     
     reg [7:0]  R_b;
     reg [63:0] R_c = 64'd0;
@@ -25,7 +26,7 @@ module operative_part (
     wire [31:0] xor_shift_out;
     wire real_start;
 
-assign case_R_c_zero = (R_c == 64'd0)?1:0;
+assign case_R_c_zero = (R_c == 64'd0)?1'b1:1'b0;
 assign m6_in = R_b;
 assign c6_in = R_c;
 assign real_start = case_R_c_zero & start;
@@ -71,11 +72,11 @@ always_ff @(posedge clock or negedge rstn) begin
     else 
     begin
         if(validate_input == 1) begin 
-            R_c <= R_c + 1;
+            R_c <= R_c + 64'd1;
             R_b <= B;
         end 
 
-        if(validate_R_h == 1) begin 
+        if(validate_R_H == 1) begin 
             R_h <= xor_shift_out;
         end
     end
